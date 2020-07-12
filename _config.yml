@@ -1,5 +1,5 @@
 knewton:
-    baseurl:
+    baseurl: /some-docsite
     title: Project Name
     theme_color: '#21243c'
     language: en-US 
