@@ -1,0 +1,17 @@
+/* =============================================================================
+   FONTS (generic/_fonts.scss)
+   ========================================================================== */
+
+/* Icons
+   ========================================================================== */
+
+@font-face {
+	font-family: 'knewton Icons';
+	src: url('../fonts/knewton-icons/knewton-icons.eot?3ketly');
+	src: url('../fonts/knewton-icons/knewton-icons.eot?3ketly#iefix') format('embedded-opentype'),
+	     url('../fonts/knewton-icons/knewton-icons.ttf?3ketly') format('truetype'),
+	     url('../fonts/knewton-icons/knewton-icons.woff?3ketly') format('woff'),
+	     url('../fonts/knewton-icons/knewton-icons.svg?3ketly#knewton-icons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}

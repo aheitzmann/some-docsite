@@ -1,0 +1,141 @@
+{% if include.style == 'alternative' %}
+	{% assign header_classes = 'c-header u-text-white' %}
+	{% assign cta_classes = 'c-btn c-btn--md c-btn--white u-text-md' %}
+	{% assign hamburger_cta_classes = 'c-hamburger-icon c-hamburger-icon--slider c-hamburger-icon--white js-hamburger-icon js-offcanvas-toggle u-ml-auto u-hidden@lg' %}
+{% else %}
+	{% assign header_classes = 'c-header' %}
+	{% assign cta_classes = 'c-btn c-btn--md c-btn--gray u-text-md' %}
+	{% assign hamburger_cta_classes = 'c-hamburger-icon c-hamburger-icon--slider js-hamburger-icon js-offcanvas-toggle u-ml-auto u-hidden@lg' %}
+{% endif %}
+
+<!DOCTYPE html>
+{% if site.knewton.language %}
+	<html lang="{{ site.knewton.language }}">
+{% else %}
+	<html>
+{% endif %}
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0">
+		{% if page.url == "/" %}
+			<title>{{ site.knewton.title }}</title>
+		{% else %}
+			<title>{{ page.title }} | {{ site.knewton.title }}</title>
+		{% endif %}
+		{% if page.description %}
+			<meta name="description" content="{{ page.description }}">
+		{% endif %}
+		{% if page.keywords %}
+			<meta name="keywords" content="{{ page.keywords }}">
+		{% endif %}
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+		<link rel="stylesheet" href="{% if jekyll.environment == 'production' %}{{ site.knewton.baseurl }}{% endif %}/knewton-theme/assets/css/style.css">
+
+		<link rel="icon" href="https://www.knewton.com//wp-content/uploads/2020/01/cropped-favicon-512x512-2-32x32.png" sizes="32x32">
+		<link rel="icon" href="https://www.knewton.com//wp-content/uploads/2020/01/cropped-favicon-512x512-2-192x192.png" sizes="192x192">
+		<link rel="apple-touch-icon" href="https://www.knewton.com//wp-content/uploads/2020/01/cropped-favicon-512x512-2-180x180.png">
+		<meta name="msapplication-TileImage" content="https://www.knewton.com//wp-content/uploads/2020/01/cropped-favicon-512x512-2-270x270.png">
+
+		<meta name="robots" content="index, follow">
+		<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+		<meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+	
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="{{ page.title }}">
+		<meta property="og:description" content="{{ page.description}}">
+
+		<meta name="twitter:creator" content="@knewton">
+		<meta name="twitter:site" content="@knewton">
+	</head>
+	<body>
+		{% if site.knewton.header.nav or site.knewton.header.cta %}
+			<div class="c-offcanvas">
+				<div class="c-offcanvas__inner">
+					{% if site.knewton.header.nav %}
+						<ul class="c-nav c-nav--stacked u-mx-auto">
+							{% for item in site.knewton.header.nav %}
+								<li><a href="{% if jekyll.environment == 'production' %}{{ site.knewton.baseurl }}{% endif %}{{ item.item_url }}">{{ item.item_name }}</a></li>
+							{% endfor %}
+						</ul><!-- /.c-nav -->
+					{% endif %}
+					{% if site.knewton.header.cta %}
+						{% if site.knewton.header.cta.icon %}
+							<a href="{{ site.knewton.header.cta.url }}" class="c-btn c-btn--md c-btn--gray u-text-md">
+								{{ site.knewton.header.cta.label }}
+								<div class="c-btn__icon">
+									<i class="o-icon o-icon--{{ site.knewton.header.cta.icon }}"></i>
+								</div>
+							</a>
+						{% else %}
+							<a href="{{ site.knewton.header.cta.url }}" class="c-btn c-btn--md c-btn--gray u-text-md">{{ site.knewton.header.cta.label }}</a>
+						{% endif %}
+					{% endif %}
+				</div><!-- /.c-offcanvas__inner -->
+			</div><!-- /.c-offcanvas -->
+		{% endif %}
+
+		{% if site.knewton.header.logo.text or site.knewton.header.logo.image or site.knewton.header.nav %}
+			<header class="{{ header_classes }}">
+				<div class="o-container">
+					<div class="o-row">
+						<div class="o-col-12">
+							<div class="u-flex u-items-center">
+								{% if site.knewton.header.logo.text %}
+									{% if page.url == "/" %}
+										<h1 class="c-logo u-mb-0 js-logo">
+											<a href="{% if jekyll.environment == 'production' %}{{ site.knewton.baseurl }}{% endif %}/" class="c-logo__link">{{ site.knewton.header.logo.text }}</a>
+										</h1><!-- /.c-logo -->
+									{% else %}
+										<p class="c-logo u-mb-0 js-logo">
+											<a href="{% if jekyll.environment == 'production' %}{{ site.knewton.baseurl }}{% endif %}/" class="c-logo__link">{{ site.knewton.header.logo.text }}</a>
+										</p><!-- /.c-logo -->
+									{% endif %}
+								{% elsif site.knewton.header.logo.image %}
+									<div class="c-logo">
+										<a href="{% if jekyll.environment == 'production' %}{{ site.knewton.baseurl }}{% endif %}/" class="c-logo__link">
+											<img src="{% if jekyll.environment == 'production' %}{{ site.knewton.baseurl }}{% endif %}/knewton-theme/assets/images/layout/logo-kw-white.svg">
+										</a><!-- /.c-logo__link -->
+									</div><!-- /.c-logo -->
+								{% endif %}
+								{% if site.knewton.header.nav or if site.knewton.header.cta %}
+									<div class="u-flex u-items-center u-ml-auto">
+										{% if site.knewton.header.nav %}
+											<ul class="c-nav u-mb-0 u-hidden u-block@lg">
+												{% for item in site.knewton.header.nav %}
+													{% if item.item_name == page.title %}
+														{% assign item_classes = 'is-current' %}
+													{% else %}
+														{% assign item_classes = '' %}
+													{% endif %}
+													<li class="{{ item_classes }}"><a href="{% if jekyll.environment == 'production' %}{{ site.knewton.baseurl }}{% endif %}{{ item.item_url }}">{{ item.item_name }}</a></li>
+												{% endfor %}
+											</ul><!-- /.c-nav -->
+										{% endif %}
+										{% if site.knewton.header.cta %}
+											<div class="u-ml-5 u-hidden u-block@lg">
+												{% if site.knewton.header.cta.icon %}
+													<a href="{{ site.knewton.header.cta.url }}" class="{{ cta_classes }}">
+														{{ site.knewton.header.cta.label }}
+														<div class="c-btn__icon">
+															<i class="o-icon o-icon--{{ site.knewton.header.cta.icon }}"></i>
+														</div>
+													</a>
+												{% else %}
+													<a href="{{ site.knewton.header.cta.url }}" class="{{ cta_classes }}">{{ site.knewton.header.cta.label }}</a>
+												{% endif %}
+											</div>
+										{% endif %}
+									</div>
+								{% endif %}
+								<button class="{{ hamburger_cta_classes }}" type="button">
+									<span class="c-hamburger-icon__box">
+										<span class="c-hamburger-icon__inner"></span>
+									</span><!-- /.c-hamburger-icon__box -->
+								</button><!-- /.c-hamburger-icon -->
+							</div>
+						</div><!-- /.o-col -->
+					</div><!-- /.o-row -->
+				</div><!-- /.o-container -->
+			</header><!-- /.c-header -->
+		{% endif %}
