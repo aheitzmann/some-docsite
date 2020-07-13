@@ -1,11 +1,10 @@
 ---
 layout: content-list
-title: Adaptive Content 
-description: 
+title: Adaptive content with Knewton  
+description: What does it mean to have adaptive content?
 keywords: 
 
-# Hero section
 hero:
-    title: Adaptive Content section — Title
-    text: Adaptive Content Hero section — Text
+    title: Content, Adaptively
+    text: What does it mean to think about, store and manage adaptive learning content?
 ---

@@ -17,7 +17,7 @@ knewton:
         cta:
             label: API Documentation
             url: /documentation
-            icon: # https://feathericons.com
+            icon: folder # https://feathericons.com
     footer:
         logo:
             text: dev.knewton.com

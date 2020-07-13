@@ -9,8 +9,14 @@ keywords: # Define keywords for search engines
 hero:
     title: dev.knewton.com
     text: Build and Integrate world class adaptive products
-    background_image: # Paste image URL to display image in background of hero section
-
+    background_image: # url
+    buttons: 
+      - label: Get Started
+        url: /documentation
+        external_url: false
+        style: bordered # Choose style: "filled" or "bordered"
+        icon: chevron-right # https://feathericons.com
+        
 # Features section
 features:
     rows: # Add feature rows below, there are examples with all available options
@@ -28,7 +34,7 @@ features:
                 icon: cpu
     footer: # Set features section footer variables
         title: Thinking Adaptively
-        description: Work with us, Integrate your learning solutions
+        description: Work with us to integrate your learning solutions
         buttons:
             - label: Build with Knewton 
               url: https://secure.wiley.com/LP=6978

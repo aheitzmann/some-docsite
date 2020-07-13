@@ -1,11 +1,10 @@
 ---
 layout: product-list
-title: Adaptive Products 
-description: 
+title: Building adaptive products with Knewton 
+description: What is an adaptive product with Knewton Enterprise?
 keywords: 
 
-# Hero section
 hero:
-    title: Adaptive Products section — Title
-    text: Adaptive ProductsHero section — Text
+    title: Building Adaptive Products
+    text: What is an adaptive product?
 ---

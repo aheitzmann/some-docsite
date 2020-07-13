@@ -1,12 +1,10 @@
 ---
-# Page settings
-layout: documentation-list # Choose layout: "default", "homepage" or "documentation-archive"
-title: Documentation # Define a title of your page
-description: # Define a description of your page
-keywords: # Define keywords for search engines
+layout: documentation-list
+title: Working with the Knewton Enterprise API
+description: Understand how to leverage the Knewton API to build and integrate your learning solutions
+keywords: 
 
-# Hero section
 hero:
-    title: Hero section — Title
-    text: Hero section — Text
+    title: Working with the Knewton Enterprise API
+    text: Leverage the Knewton API to build and integrate your learning solutions
 ---
