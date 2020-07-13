@@ -1,6 +1,6 @@
 knewton:
     baseurl: /some-docsite
-    title: Project Name
+    title: dev.knewton.com Knewton Enterprise Platform
     theme_color: '#21243c'
     language: en-US 
     header:
@@ -15,9 +15,9 @@ knewton:
             - item_name: Adaptive Content
               item_url: /adaptive-content
         cta:
-            label: Documentation
+            label: API Documentation
             url: /documentation
-            icon: settings # https://feathericons.com
+            icon: # https://feathericons.com
     footer:
         logo:
             text: dev.knewton.com
