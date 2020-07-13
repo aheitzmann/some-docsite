@@ -15,6 +15,10 @@
 
 $color-primary: $color-theme !default;
 
+$color-blue-lagoon: #008292;
+$color-tundora: #484848;
+$color-east-bay: #4d538c;
+
 /**
  * Extra
  */
@@ -86,7 +90,22 @@ $font-size-h4: 1.5rem !default;
 $font-size-h5: 1.375rem !default;
 $font-size-h6: 1.25rem !default;
 
+/**
+ * Backgrounds
+ */
 
+
+.bg-blue-lagoon {
+	background-color: $color-blue-lagoon;
+}
+
+.bg-tundora {
+	background-color: $color-tundora;
+}
+
+.bg-east-bay {
+	background-color: $color-east-bay;
+}
 
 /* Spacing
    ========================================================================== */

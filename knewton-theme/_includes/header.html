@@ -1,12 +1,6 @@
-{% if include.style == 'alternative' %}
-	{% assign header_classes = 'c-header u-text-white' %}
-	{% assign cta_classes = 'c-btn c-btn--md c-btn--white u-text-md' %}
-	{% assign hamburger_cta_classes = 'c-hamburger-icon c-hamburger-icon--slider c-hamburger-icon--white js-hamburger-icon js-offcanvas-toggle u-ml-auto u-hidden@lg' %}
-{% else %}
-	{% assign header_classes = 'c-header' %}
-	{% assign cta_classes = 'c-btn c-btn--md c-btn--gray u-text-md' %}
-	{% assign hamburger_cta_classes = 'c-hamburger-icon c-hamburger-icon--slider js-hamburger-icon js-offcanvas-toggle u-ml-auto u-hidden@lg' %}
-{% endif %}
+{% assign header_classes = 'c-header u-text-white' %}
+{% assign cta_classes = 'c-btn c-btn--md c-btn--white u-text-md' %}
+{% assign hamburger_cta_classes = 'c-hamburger-icon c-hamburger-icon--slider c-hamburger-icon--white js-hamburger-icon js-offcanvas-toggle u-ml-auto u-hidden@lg' %}
 
 <!DOCTYPE html>
 {% if site.knewton.language %}

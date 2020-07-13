@@ -1,8 +1,8 @@
 {% include header.html %}
 
-{% include hero.html classes='u-bg-primary u-text-white u-pt-16 u-pb-10' %}
+{% include hero.html classes='bg-blue-lagoon u-text-white u-pt-16 u-pb-10' %}
 
-{% if page.content or site.documentation %}
+{% if page.content or site.product %}
 	<div class="u-pt-8 u-pb-5">
 		<div class="o-container">
 			<div class="o-row">
@@ -13,11 +13,11 @@
 						</div><!-- /.c-post -->
 					</div><!-- /.o-col -->
 				{% endif %}
-				{% if site.documentation %}
+				{% if site.product %}
 					<div class="o-col-3@lg o-offset-1@lg o-offset-2@xl">
 						<ul class="c-page-nav u-sticky u-pin-t-6 u-mt-4 u-mt-1@lg u-mb-1 u-mb-4@lg">
-							{% assign documentation = site.documentation | sort: 'order' %}
-							{% for document in documentation %}
+							{% assign product = site.product | sort: 'order' %}
+							{% for document in product %}
 								{% if page.order >= document.order %}
 									<li class="is-active">
 										<a href="{{ document.url }}">
@@ -40,15 +40,15 @@
 	</div>
 {% endif %}
 
-{% assign documentation_size = site.documentation | size %}
-{% if documentation_size > 1 %}
-	<div class="u-bg-primary u-text-white u-pt-3 u-pt-4@sm u-pb-3 u-pb-4@sm">
+{% assign product_size = site.product | size %}
+{% if product_size > 1 %}
+	<div class="bg-blue-lagoon u-text-white u-pt-3 u-pt-4@sm u-pb-3 u-pb-4@sm">
 		<div class="o-container">
 			<div class="o-row">
 				<div class="o-col-12 u-text-center">
 					<div class="u-inline-block u-flex@sm">
-						{% assign documentation = site.documentation | sort: 'order' %}
-						{% for document in documentation %}
+						{% assign product = site.product | sort: 'order' %}
+						{% for document in product %}
 							{% assign next_document = document.order | minus: 1 %}
 							{% assign previous_document = document.order | plus: 1 %}
 							{% if next_document == page.order %}
@@ -64,8 +64,8 @@
 	</div>
 {% endif %}
 
-{% assign documentation_size = site.documentation | size %}
-{% if documentation_size > 1 %}
+{% assign product_size = site.product | size %}
+{% if product_size > 1 %}
 	{% include footer.html %}
 {% else %}
 	{% include footer.html bordered=true %}

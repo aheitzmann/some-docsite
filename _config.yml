@@ -10,27 +10,29 @@ knewton:
         nav:
             - item_name: Home
               item_url: /
-            - item_name: Adaptive Content
-              item_url: /default
             - item_name: Adaptive Products
-              item_url: /product
-            - item_name: Adaptive Development
-              item_url: /product
+              item_url: /adaptive-products
+            - item_name: Adaptive Content
+              item_url: /adaptive-content
+        cta:
+            label: Documentation
+            url: /documentation
+            icon: settings # https://feathericons.com
     footer:
         logo:
-            text: Project name
+            text: dev.knewton.com
             image:
-        text: Copyright &copy; 2018. - Project name <br>All rights reserved.
+        text: Copyright &copy; 2020. - dev.knewton.com <br>All rights reserved.
     google_analytics:
-        tracking_code: # Add your Google Analytics tracking code to activate Google Analytics
-    comments:
-        disqus_forum_shortname: # Add your Disqus forum shortname to activate comments site-wide
+        tracking_code: 
 
 # Defining collections
 collections:
     documentation:
         output: true
     product:
+        output: true    
+    content:
         output: true
 
 # Defining defaults

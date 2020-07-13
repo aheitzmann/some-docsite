@@ -1,11 +1,11 @@
-{% if site.documentation %}
+{% if site.content %}
 	<div class="{{ include.classes }}">
 		<div class="o-container">
 			<div class="o-row">
 				<div class="o-col-12">
 					<div class="o-row">
-						{% assign documentation = site.documentation | sort: 'order' %}
-						{% for document in documentation %}
+						{% assign content = site.content | sort: 'order' %}
+						{% for document in content %}
 							<div class="o-col-6@lg u-mb-3">
 								<a href="{{ document.url }}" class="c-feature-card c-feature-card--large">
 									<div class="c-feature-card__content">
