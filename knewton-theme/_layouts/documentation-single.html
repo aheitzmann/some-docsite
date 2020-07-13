@@ -42,30 +42,6 @@
 
 {% assign documentation_size = site.documentation | size %}
 {% if documentation_size > 1 %}
-	<div class="u-bg-primary u-text-white u-pt-3 u-pt-4@sm u-pb-3 u-pb-4@sm">
-		<div class="o-container">
-			<div class="o-row">
-				<div class="o-col-12 u-text-center">
-					<div class="u-inline-block u-flex@sm">
-						{% assign documentation = site.documentation | sort: 'order' %}
-						{% for document in documentation %}
-							{% assign next_document = document.order | minus: 1 %}
-							{% assign previous_document = document.order | plus: 1 %}
-							{% if next_document == page.order %}
-								<a href="{{ document.url }}" class="c-arrow-link c-arrow-link--next u-ml-auto">{{ document.title }}</a>
-							{% elsif previous_document == page.order %}
-								<a href="{{ document.url }}" class="c-arrow-link c-arrow-link--prev u-mr-auto">{{ document.title }}</a>
-							{% endif %}
-						{% endfor %}
-					</div>
-				</div><!-- /.o-col -->
-			</div><!-- /.o-row -->
-		</div><!-- /.o-container -->
-	</div>
-{% endif %}
-
-{% assign documentation_size = site.documentation | size %}
-{% if documentation_size > 1 %}
 	{% include footer.html %}
 {% else %}
 	{% include footer.html bordered=true %}

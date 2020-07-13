@@ -8,7 +8,7 @@ keywords: # Define keywords for search engines
 # Hero section
 hero:
     title: dev.knewton.com
-    text: Build and Integrate world class adaptive products
+    text: Build and Integrate world class adaptive learning products with Knewton
     background_image: # url
     buttons: 
       - label: Get Started
