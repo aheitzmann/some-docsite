@@ -29,7 +29,11 @@
 	}
 }
 
-
+.focused-feature {
+	.c-feature-card {
+		background-color: $color-golden-yellow;
+	}
+}
 
 /* Icon
    ========================================================================== */

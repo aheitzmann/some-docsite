@@ -6,7 +6,13 @@
 					<div class="o-row">
 						{% assign documentation = site.documentation | sort: 'order' %}
 						{% for document in documentation %}
-							<div class="o-col-6@lg u-mb-3">
+							{% if document.order == -1 %}
+								{% assign feature-container-classes = 'focused-feature o-col-12@lg u-mb-10' %}
+							{% else %}
+								{% assign feature-container-classes = 'o-col-6@lg u-mb-3' %}
+							{% endif %}
+
+							<div class="{{ feature-container-classes }}">
 								<a href="{% if jekyll.environment == 'production' %}{{ site.knewton.baseurl }}{% endif %}{{ document.url }}" class="c-feature-card c-feature-card--large">
 									<div class="c-feature-card__content">
 										{% if document.title %}
