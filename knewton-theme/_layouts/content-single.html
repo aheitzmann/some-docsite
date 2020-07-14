@@ -18,7 +18,7 @@
 						<ul class="c-page-nav u-sticky u-pin-t-6 u-mt-4 u-mt-1@lg u-mb-1 u-mb-4@lg">
 							{% assign content = site.content | sort: 'order' %}
 							{% for document in content %}
-								{% if page.order >= document.order %}
+								{% if page.url == document.url %}
 									<li class="is-active">
 										<a href="{% if jekyll.environment == 'production' %}{{ site.knewton.baseurl }}{% endif %}{{ document.url }}">
 											<p class="c-page-nav__heading">{{ document.title }}</p>

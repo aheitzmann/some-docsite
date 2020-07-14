@@ -1,4 +1,3 @@
-
 ---
 layout: 'documentation-single'
 title: Limits - Rate and Entitiy
