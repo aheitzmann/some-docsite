@@ -55,14 +55,14 @@
 					{% endif %}
 					{% if site.knewton.header.cta %}
 						{% if site.knewton.header.cta.icon %}
-							<a href="{{ site.knewton.header.cta.url }}" class="c-btn c-btn--md c-btn--gray u-text-md">
+							<a href="{% if jekyll.environment == 'production' %}{{ site.knewton.baseurl }}{% endif %}{{ site.knewton.header.cta.url }}" class="c-btn c-btn--md c-btn--gray u-text-md">
 								{{ site.knewton.header.cta.label }}
 								<div class="c-btn__icon">
 									<i class="o-icon o-icon--{{ site.knewton.header.cta.icon }}"></i>
 								</div>
 							</a>
 						{% else %}
-							<a href="{{ site.knewton.header.cta.url }}" class="c-btn c-btn--md c-btn--gray u-text-md">{{ site.knewton.header.cta.label }}</a>
+							<a href="{% if jekyll.environment == 'production' %}{{ site.knewton.baseurl }}{% endif %}{{ site.knewton.header.cta.url }}" class="c-btn c-btn--md c-btn--gray u-text-md">{{ site.knewton.header.cta.label }}</a>
 						{% endif %}
 					{% endif %}
 				</div><!-- /.c-offcanvas__inner -->
