@@ -20,13 +20,13 @@
 							{% for document in documentation %}
 								{% if page.order >= document.order %}
 									<li class="is-active">
-										<a href="{{ document.url }}">
+										<a href="{% if jekyll.environment == 'production' %}{{ site.knewton.baseurl }}{% endif %}{{ document.url }}">
 											<p class="c-page-nav__heading">{{ document.title }}</p>
 										</a>
 									</li>
 								{% else %}
 									<li>
-										<a href="{{ document.url }}">
+										<a href="{% if jekyll.environment == 'production' %}{{ site.knewton.baseurl }}{% endif %}{{ document.url }}">
 											<p class="c-page-nav__heading">{{ document.title }}</p>
 										</a>
 									</li>
