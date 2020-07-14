@@ -7,7 +7,7 @@
 						{% assign content = site.content | sort: 'order' %}
 						{% for document in content %}
 							<div class="o-col-6@lg u-mb-3">
-								<a href="{{ document.url }}" class="c-feature-card c-feature-card--large">
+								<a href="{% if jekyll.environment == 'production' %}{{ site.knewton.baseurl }}{% endif %}{{ document.url }}" class="c-feature-card c-feature-card--large">
 									<div class="c-feature-card__content">
 										{% if document.title %}
 											<h4 class="c-feature-card__title">{{ document.title }}</h4>
