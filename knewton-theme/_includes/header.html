@@ -109,14 +109,14 @@
 										{% if site.knewton.header.cta %}
 											<div class="u-ml-5 u-hidden u-block@lg">
 												{% if site.knewton.header.cta.icon %}
-													<a href="{{ site.knewton.header.cta.url }}" class="{{ cta_classes }}">
+													<a href="{% if jekyll.environment == 'production' %}{{ site.knewton.baseurl }}{% endif %}{{ site.knewton.header.cta.url }}" class="{{ cta_classes }}">
 														{{ site.knewton.header.cta.label }}
 														<div class="c-btn__icon">
 															<i class="o-icon o-icon--{{ site.knewton.header.cta.icon }}"></i>
 														</div>
 													</a>
 												{% else %}
-													<a href="{{ site.knewton.header.cta.url }}" class="{{ cta_classes }}">{{ site.knewton.header.cta.label }}</a>
+													<a href="{% if jekyll.environment == 'production' %}{{ site.knewton.baseurl }}{% endif %}{{ site.knewton.header.cta.url }}" class="{{ cta_classes }}">{{ site.knewton.header.cta.label }}</a>
 												{% endif %}
 											</div>
 										{% endif %}
