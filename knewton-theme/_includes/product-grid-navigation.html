@@ -7,7 +7,7 @@
 						{% assign product = site.product | sort: 'order' %}
 						{% for document in product %}
 							{% if document.order == -1 %}
-								{% assign feature-container-classes = 'focused-feature o-col-12@lg u-mb-10' %}
+								{% assign feature-container-classes = 'focused-feature o-col-12 u-mb-10' %}
 							{% else %}
 								{% assign feature-container-classes = 'o-col-6@lg u-mb-3' %}
 							{% endif %}
