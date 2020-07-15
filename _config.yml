@@ -1,8 +1,6 @@
 knewton:
     baseurl: /some-docsite
     title: dev.knewton.com Knewton Enterprise Platform
-    theme_color: '#21243c'
-    language: en-US 
     header:
         logo:
             text:

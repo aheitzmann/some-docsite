@@ -18,19 +18,25 @@
 						<ul class="c-page-nav u-sticky u-pin-t-6 u-mt-4 u-mt-1@lg u-mb-1 u-mb-4@lg">
 							{% assign product = site.product | sort: 'order' %}
 							{% for document in product %}
+
 								{% if page.url == document.url %}
-									<li class="is-active">
-										<a href="{% if jekyll.environment == 'production' %}{{ site.knewton.baseurl }}{% endif %}{{ document.url }}">
-											<p class="c-page-nav__heading">{{ document.title }}</p>
-										</a>
-									</li>
+									{% assign is-active-classes = 'is-active' %}
 								{% else %}
-									<li>
-										<a href="{% if jekyll.environment == 'production' %}{{ site.knewton.baseurl }}{% endif %}{{ document.url }}">
-											<p class="c-page-nav__heading">{{ document.title }}</p>
-										</a>
-									</li>
+									{% assign is-active-classes = '' %}
 								{% endif %}
+
+								{% if document.order == -1 %}
+									{% assign focused-link-classes = 'focused-link' %}
+								{% else %}
+									{% assign focused-link-classes = '' %}
+								{% endif %}
+
+								<li class="{{is-active-classes}} {{focused-link-classes}}">
+									<a href="{% if jekyll.environment == 'production' %}{{ site.knewton.baseurl }}{% endif %}{{ document.url }}">
+										<p class="c-page-nav__heading">{{ document.title }}</p>
+									</a>
+								</li>
+
 							{% endfor %}
 						</ul><!-- /.c-page-nav -->
 					</div><!-- /.o-col -->
