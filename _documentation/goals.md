@@ -10,7 +10,6 @@ hero:
     text: Contextualising the learning experience
 ---
 
-
 Knewton goals can exist in one of several states, each of which directly impacts the behavior of Knewton recommendations and analytics. This section will discuss the lifecycle of a goal, and will go into detail around how goals move between states. It is to be noted that a single goal can be assigned to a subset of registrations in a learning instance, and at the same time, that goal may have been completed by other registrations in the same learning instance. In other words, a goal is said to be in a given state for a given registration.
 
 In general, there are three main states:
