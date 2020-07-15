@@ -58,7 +58,7 @@
 	&:hover,
 	&:focus,
 	&:active {
-		background-color: lighten($color-primary, 42%);
+		background-color: $color-golden-yellow;
 	}
 }
 
