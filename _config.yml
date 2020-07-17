@@ -1,6 +1,6 @@
 knewton:
     baseurl: /some-docsite
-    title: dev.knewton.com Knewton Enterprise Platform
+    title: dev.knewton.com - Knewton Enterprise Platform Documentation
     header:
         logo:
             text:
@@ -16,11 +16,6 @@ knewton:
             label: API Documentation
             url: /documentation
             icon: folder # https://feathericons.com
-    footer:
-        logo:
-            text: dev.knewton.com
-            image:
-        text: Copyright &copy; 2020. - dev.knewton.com <br>All rights reserved.
     google_analytics:
         tracking_code: 
 

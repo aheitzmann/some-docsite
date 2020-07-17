@@ -1,15 +1,14 @@
 ---
 layout: 'documentation-single'
-title: Limits - Rate and Entitiy
-description: tive learners in meaningful groups
+title: Rate and Entity Limits
+description: Ensuring performant adaptive experiences
 keywords: 
 order: 0
 
 hero:
-    title: Learning Instances (classes)
-    text: Manage your adaptive learners in meaingful groups
+    title: Rate and Entity Limits
+    text: Ensuring performant adaptive experiences
 ---
-
 
 # Rate Limits
 

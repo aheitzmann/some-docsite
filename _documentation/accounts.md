@@ -1,15 +1,14 @@
 ---
 layout: 'documentation-single'
 title: Accounts
-description: Manage your learners and their adaptive accounts
+description: Connecting you users to our platform
 keywords: 
 order: 0
 
 hero:
     title: Accounts
-    text: Manage your learners and their adaptive accounts
+    text: Connecting your users to our platform
 ---
-
 
 ### Creating User Accounts
 

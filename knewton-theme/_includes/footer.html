@@ -3,29 +3,21 @@
 {% else %}
 	{% assign classes = 'c-footer' %}
 {% endif %}
+	
+		<footer class="{{ classes }}">
+			<div class="o-container">
+				<div class="o-row">
+					<div class="o-col-12 u-mt-6 u-mt-8@md u-mb-4 u-mb-6@md">
+						<div class="c-logo u-mb-1">
+							<img src="{% if jekyll.environment == 'production' %}{{ site.knewton.baseurl }}{% endif %}/knewton-theme/assets/images/layout/logo-kw.svg">
+						</div><!-- /.c-logo -->
 
-		{% if site.knewton.footer.logo.text or site.knewton.footer.logo.image or site.knewton.footer.text %}
-			<footer class="{{ classes }}">
-				<div class="o-container">
-					<div class="o-row">
-						<div class="o-col-12 u-mt-6 u-mt-8@md u-mb-4 u-mb-6@md">
-							{% if site.knewton.footer.logo.text %}
-								<p class="c-logo u-mb-1">
-									{{ site.knewton.footer.logo.text }}
-								</p><!-- /.c-logo -->
-							{% elsif site.knewton.footer.logo.image %}
-								<div class="c-logo u-mb-1">
-									<img src="{% if jekyll.environment == 'production' %}{{ site.knewton.baseurl }}{% endif %}/knewton-theme/assets/images/layout/logo-footer.png">
-								</div><!-- /.c-logo -->
-							{% endif %}
-							{% if site.knewton.footer.text %}
-								<p>{{ site.knewton.footer.text }}</p>
-							{% endif %}
-						</div><!-- /.o-col -->
-					</div><!-- /.o-row -->
-				</div><!-- /.o-container -->
-			</footer><!-- /.c-footer -->
-		{% endif %}
+						<p>Copyright &copy; 2020. Knewton, Inc.</p>
+					</div><!-- /.o-col -->
+
+				</div><!-- /.o-row -->
+			</div><!-- /.o-container -->
+		</footer><!-- /.c-footer -->
 
 		<script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.knewton.baseurl }}{% endif %}/knewton-theme/assets/js/vendor/jquery-3.3.1.min.js"></script>
 		<script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.knewton.baseurl }}{% endif %}/knewton-theme/assets/js/scripts.min.js"></script>

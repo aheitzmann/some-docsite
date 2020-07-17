@@ -8,13 +8,13 @@ keywords: # Define keywords for search engines
 # Hero section
 hero:
     title: dev.knewton.com
-    text: Build and Integrate world class adaptive learning products with Knewton
+    text: Build and Integrate world class adaptive learning products with the Knewton Enterprise Platform
     background_image: # url
     buttons: 
       - label: Get Started
         url: /documentation
         external_url: false
-        style: bordered # Choose style: "filled" or "bordered"
+        style: bordered # "filled" or "bordered"
         icon: chevron-right # https://feathericons.com
         
 # Features section
@@ -32,7 +32,7 @@ features:
               - title: Feature 3 — Title
                 description: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident iste voluptas sunt eligendi sit dolorem blanditiis nostrum, fuga ducimus enim? Ut temporibus.
                 icon: cpu
-    footer: # Set features section footer variables
+    footer:
         title: Thinking Adaptively
         description: Work with us to integrate your learning solutions
         buttons:

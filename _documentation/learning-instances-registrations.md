@@ -1,13 +1,13 @@
 ---
 layout: 'documentation-single'
-title: Learning Instances (classes) & Registrations
-description: Manage your adaptive learners in meaningful groups
+title: Learning Instances & Registrations
+description: Manage your adaptive learners and their instructors in meaningful groups
 keywords: 
 order: 0
 
 hero:
     title: Learning Instances (classes) & Registrations
-    text: Manage your adaptive learners in meaingful groups
+    text: Manage your adaptive learners and their instructors in meaingful groups
 ---
 
 Learning applications allow groups of students to work through the same content toward a common learning objective. These groups range from very large (e.g., hundreds of students in an introductory college course) to very small (e.g., a single student working in a direct-to-consumer application).
