@@ -56,27 +56,9 @@ When you’re application is ready to pilot, all of your API calls should be swi
 
 Note: The URL for authentication endpoints in this integration environment is profile.knewton.com
 
+# API Versioning
 
-# Response Codes
-
-| HTTP Status Code | Reason |
-| --- | --- |
-| 200 | The request completed successfully. |
-| 201 | The resource was created successfully. |
-| 202 | The request was received and will be processed asynchronously. |
-| 204 | The request was successful, and there is no data to return. |
-| 207 | The request was partially successful, parse the response body to identify successful and failed parts. |
-| 400 | The request was malformed. |
-| 401 | The user is not authenticated. |
-| 403 | The user is authenticated, but not authorized (does not have permission to do this operation). |
-| 404 | Some part of the URL could not be found, usually that the Knewton ID does not exist, but could also be if that endpoint has no data or if the URL is ill-formed. |
-| 405 | The method used to access the endpoint is incorrect. |
-| 422 | Some part of the JSON request was ill-formed and could not be parsed, or that it could be parsed but one of the fields is incorrect, perhaps with a wrong UUID or disallowed field. Also returned whenever an entity limit was exceeded. |
-| 429 | Rate limit exceeded for this endpoint. |
-| 500 | Server Error. |
-
-Response payload format for each API endpoint and response code can be found [here](https://docs.google.com/spreadsheets/d/1OcBs7VNptIJbSXEr1sJ0X2q__52viMSrDgpvysd8PjY/edit#gid=1339334062).
-
+Knewton’s version support policy for the Knewton APIs is as follows: each new version of the Knewton API shall have a six (6) month period following release where such version is considered a “release candidate.” During that six (6) month period, Knewton collects input from its API partners and can make changes to that version of the Knewton API. After that six (6) months ends, the release candidate is promoted to a long-term support (“LTS”) version of such Knewton API. When a new LTS version of a Knewton API is released, the previous LTS version will continue to be supported for a period of 12 months; provided, however, that the foregoing shall not be construed to limit Knewton’s ability to require immediately implementation of patches and updates to address security, intellectual property, legal compliance or other critical issues.
 
 
 The Knewton API exposes a relatively small set of constructs designed to support a variety of learning applications spanning a range of educational use cases. To integrate with Knewton, the application designer must understand the kinds of services the Knewton API provides, identify the subset of services their application must rely upon, and connect the application’s logic to corresponding API endpoints in a way that’s consistent with principles and guidelines outlined below.

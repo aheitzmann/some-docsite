@@ -7,5 +7,5 @@ order: -1
 
 hero:
     title: An overview of Integrated Content
-    text: How to think about adaptive content
+    text: Getting started with Integrated Content
 ---

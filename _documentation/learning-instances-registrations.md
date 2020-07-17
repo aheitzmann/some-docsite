@@ -1,12 +1,12 @@
 ---
 layout: 'documentation-single'
-title: Learning Instances (classes)
+title: Learning Instances (classes) & Registrations
 description: Manage your adaptive learners in meaningful groups
 keywords: 
 order: 0
 
 hero:
-    title: Learning Instances (classes)
+    title: Learning Instances (classes) & Registrations
     text: Manage your adaptive learners in meaingful groups
 ---
 

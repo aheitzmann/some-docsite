@@ -1,10 +1,14 @@
 ---
-layout: default
-title: Default layout — Title
-description: Default layout — Description
+layout: 'documentation-single' # documentation-single / product-single / content-single 
+title: Title
+description: Description
 keywords: 
----
+order: 
 
+hero:
+    title: Hero Title
+    text: Hero Text
+---
 
 # h1 Heading
 ## h2 Heading
@@ -12,7 +16,6 @@ keywords:
 #### h4 Heading
 ##### h5 Heading
 ###### h6 Heading
-
 
 ## Horizontal Rules
 
