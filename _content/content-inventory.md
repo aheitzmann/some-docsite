@@ -1,13 +1,13 @@
 ---
 layout: 'content-single'
 title: The Content Inventory
-description: How to submit content data to Knewton - The Content Inventory
+description: How to submit content data to Knewton with the content inventory
 keywords: 
 order: 0 
 
 hero:
     title: The Content Inventory
-    text: How to submit content data to Knewton - The Content Inventory
+    text: How to submit content data to Knewton with the Content Inventory
 ---
 
 [![Content-Inventory](/resources/images/content-inventory-1.png)](/resources/images/content-inventory-1.png)
