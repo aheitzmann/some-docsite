@@ -1,17 +1,22 @@
 {% if include.bordered == true %}
 	{% assign classes = 'c-footer c-footer--bordered' %}
 {% else %}
-	{% assign classes = 'c-footer' %}
+	{% assign classes = 'c-footer c-footer--bordered' %}
 {% endif %}
 	
 		<footer class="{{ classes }}">
 			<div class="o-container">
 				<div class="o-row">
-					<div class="o-col-12 u-mt-6 u-mt-8@md u-mb-4 u-mb-6@md">
+					<div class="o-col-6 u-mt-6 u-mt-8@md u-mb-4 u-mb-6@md">
 						<div class="c-logo u-mb-1">
 							<img src="{% if jekyll.environment == 'production' %}{{ site.knewton.baseurl }}{% endif %}/knewton-theme/assets/images/layout/logo-kw.svg">
 						</div><!-- /.c-logo -->
 
+						<p>Copyright &copy; 2020. Knewton, Inc.</p>
+					</div><!-- /.o-col -->
+
+					<div class="o-col-6 u-mt-6 u-mt-8@md u-mb-4 u-mb-6@md">
+					
 						<p>Copyright &copy; 2020. Knewton, Inc.</p>
 					</div><!-- /.o-col -->
 
