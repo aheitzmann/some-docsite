@@ -19,7 +19,7 @@
 
 ---
 
-![dev.knewton.com](./resources/readme/project-screenshot.png)
+![Knewton Enterprise Devsite](./resources/readme/project-screenshot.png)
 
 ## Table of Contents
 
