@@ -27,9 +27,11 @@
 			</div><!-- /.o-container -->
 		</footer><!-- /.c-footer -->
 
-		<script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.knewton.baseurl }}{% endif %}/knewton-theme/assets/js/vendor/jquery-3.3.1.min.js"></script>
-		<script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.knewton.baseurl }}{% endif %}/knewton-theme/assets/js/scripts.min.js"></script>
+		<script	src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+
+		<script type="text/javascript" src="{% if jekyll.environment == 'production' %}{{ site.knewton.baseurl }}{% endif %}/knewton-theme/assets/js/scripts.js"></script>
 
 		{% include google-analytics.html %}
+		
 	</body>
 </html>

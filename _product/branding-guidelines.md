@@ -16,7 +16,7 @@ Guidelines for our partners to display and update the Powered by Knewton logo al
 
 ![Branding Guidelines](/resources/branding/branding-guidelines.svg)
 
-# Download "Powered by Knewton" assets
+## Download "Powered by Knewton" assets
 
 Download the "Powered by Knewton" Guidelines and logo files for use in your product.
 

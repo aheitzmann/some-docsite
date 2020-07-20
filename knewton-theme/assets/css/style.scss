@@ -94,6 +94,7 @@ $color-theme: #21243c !default;
 /* Components
    ========================================================================== */
 
+@import 'components/knewton-slider';
 @import 'components/arrow-link';
 @import 'components/buttons';
 @import 'components/callout';

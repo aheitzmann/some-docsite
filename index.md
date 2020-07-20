@@ -19,17 +19,17 @@ hero:
         
 # Features section
 features:
-    rows: # Add feature rows below, there are examples with all available options
-        - title: Features row 1 — Title
-          description: Features row 1 — Description
+    rows: 
+        - title: Knewton Enterprise Adaptive Learning Platform
+          description: Knewton is an education technology company that provides a flexible and powerful adaptive learning platform on which partners can build digital products. Knewton personalizes learning paths so every learner is engaged and supported to reach their full potential.
           grid: # Add feature grid items below, there are examples with all available options
-              - title: Feature 1 — Title
+              - title: Adaptive Recommendations
                 description: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident iste voluptas sunt eligendi sit dolorem blanditiis nostrum, fuga ducimus enim? Ut temporibus.
-                icon: box # Choose from 266 icons in "Feather" icon set, list of all icons is available here - https://feathericons.com
-              - title: Feature 2 — Title
+                icon: box 
+              - title: Learner Analytics
                 description: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident iste voluptas sunt eligendi sit dolorem blanditiis nostrum, fuga ducimus enim? Ut temporibus.
                 icon: server
-              - title: Feature 3 — Title
+              - title: Content Insights
                 description: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident iste voluptas sunt eligendi sit dolorem blanditiis nostrum, fuga ducimus enim? Ut temporibus.
                 icon: cpu
     footer:

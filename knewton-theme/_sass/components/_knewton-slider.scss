@@ -1,0 +1,214 @@
+/* =============================================================================
+   KNEWTON-SLIDER (components/_knewton-slider.scss)
+   ========================================================================== */
+   #how-knewton-works-slider {
+    background: transparent url(/knewton-theme/assets/images/slider/bottom-shadow.png) bottom center no-repeat;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    margin-bottom: 40px;
+    position: relative;
+    .inner {
+      h3 {
+        text-align: center;
+        font-weight: 500;
+        color: #3b3a3a;
+        font-size: 24px;
+        margin: 0 0 55px 0;
+        padding: 0;
+      }
+      #how-knewton-works-slider-captions {
+        position: relative;
+        margin-top: 40px;
+        .pane-nav {
+          position: absolute;
+          top: 50%;
+          margin-top: -14px;
+        }
+        .pane-nav#prev-pane {
+          left: 20px;
+        }
+        .pane-nav#next-pane {
+          right: 20px;
+        }
+        #captions {
+          .caption {
+            display: none;
+            width: 650px;
+            margin: 0 auto;
+            h5 {
+              font-weight: 900;
+              color: #3b3a3a;
+              margin: 0 0 10px 0;
+              padding: 0;
+              span {
+                font-style: normal;
+                font-weight: 700;
+                color: #959595;
+                display: inline-block;
+                padding-left: 5px;
+              }
+            }
+            p {
+              font-style: normal;
+              font-weight: 400;
+              color: #575757;
+              font-size: 18px;
+              line-height: 35px;
+              a {
+                color: #149da1;
+                text-decoration: none;
+                &:hover {
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+          .caption.active {
+            display: block;
+          }
+        }
+      }
+      #how-knewton-works-slider-content {
+        width: 765px;
+        height: 521px;
+        margin: 0 auto;
+        background: transparent url(/knewton-theme/assets/images/slider/background.jpg) 0 0 no-repeat;
+        padding: 10px;
+        position: relative;
+        .pane {
+          float: left;
+          height: 501px;
+          background-color: transparent;
+          background-position: 0 0;
+          background-repeat: repeat;
+          cursor: pointer;
+          position: relative;
+          border: 2px solid transparent;
+          h4 {
+            font-style: normal;
+            font-weight: 500;
+            color: #ffffff;
+            font-size: 19px;
+            margin-left: 15px;
+            margin-top: 30px;
+            text-transform: uppercase;
+            text-align: left;
+            position: relative;
+            z-index: 10;
+            line-height: 22px;
+          }
+        }
+        .pane.active {
+          border: 2px solid #ffffff;
+        }
+        .pane#pane-learner {
+          background-image: url(/knewton-theme/assets/images/slider/mask-learner.png);
+          width: 163px;
+          margin-right: 3px;
+          &:after {
+            position: absolute;
+            content: "";
+            width: 15px;
+            height: 22px;
+            top: 25px;
+            right: -15px;
+            background-image: none;
+            z-index: 100;
+          }
+        }
+        .pane#pane-learner.active {
+          &:after {
+            background: transparent url(/knewton-theme/assets/images/slider/arrow-learner.jpg) 0 0 no-repeat;
+          }
+        }
+        .pane#pane-partner-applications {
+          background-image: url(/knewton-theme/assets/images/slider/mask-partner-applications.png);
+          width: 162px;
+          margin-right: 3px;
+          text-align: center;
+          img {
+            margin-top: 60px;
+            position: relative;
+            z-index: 10;
+          }
+        }
+        .pane#pane-partner-applications.active {
+          &:after {
+            position: absolute;
+            content: "";
+            width: 14px;
+            height: 22px;
+            background: transparent url(/knewton-theme/assets/images/slider/arrow-partner-applications.jpg) 0 0 no-repeat;
+            top: 25px;
+            right: -14px;
+            z-index: 100;
+          }
+        }
+        .pane#pane-knewton-api {
+          background-image: url(/knewton-theme/assets/images/slider/mask-knewton-api.png);
+          width: 163px;
+          margin-right: 3px;
+          text-align: center;
+          #waves {
+            margin-top: 15px;
+            position: relative;
+            z-index: 9;
+          }
+          #arrows {
+            position: absolute;
+            z-index: 10;
+            left: -20px;
+            top: 123px;
+          }
+        }
+        .pane#pane-knewton-api.active {
+          &:after {
+            position: absolute;
+            content: "";
+            width: 14px;
+            height: 22px;
+            background: transparent url(/knewton-theme/assets/images/slider/arrow-knewton-api.jpg) 0 0 no-repeat;
+            top: 25px;
+            right: -14px;
+            z-index: 100;
+          }
+        }
+        .pane#pane-knewton-platform {
+          background-image: url(/knewton-theme/assets/images/slider/mask-knewton-platform.png);
+          width: 247px;
+          ul {
+            list-style-type: none;
+            position: relative;
+            z-index: 10;
+            margin: 46px 0 0 40px;
+            padding: 0;
+            li {
+              color: #868686;
+              font-style: normal;
+              font-weight: 500;
+              font-size: 14px;
+              line-height: 22px;
+              margin: 0 0 30px 0;
+              padding: 0;
+              &:hover {
+                color: #ffffff;
+              }
+            }
+            li.two {
+              margin-bottom: 20px;
+            }
+            li.three {
+              margin-bottom: 24px;
+            }
+            li.active {
+              color: #ffffff;
+            }
+          }
+        }
+      }
+    }
+  }
+  #arrows {
+    margin-top: 40px;
+  }
+  
