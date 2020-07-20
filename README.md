@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="/">
-    <img src="./knewton-theme/assets/images/layout/logo-kw.svg" alt="Logo" width="175">
+    <img src="./knewton-theme/assets/images/layout/logo-kw.svg" alt="Logo" width="250">
   </a>
 
   <h1 style="border-bottom:none" align="center">dev.knewton.com</h3>
@@ -33,9 +33,43 @@ Clone the repository, ensure the github repository is configured for github page
 bundle exec jekyll serve
 ```
 
+# Content Structure
+The project is broken down into three key content structures, allowing product, tech and content to own and manage their own sections of the website.
 
-# Editing on 
+Content, Documentation and Content are both folders and application collections that will update when new files are added following the page template requirements
 
+![dev.knewton content structure](./resources/readme/content-structure.gif)
+
+## Page Structure
+Each page within these three collections must adhere to the template page structure defined below, updated with the detailed relevant to your new page.
+
+```
+---
+layout: 'documentation-single'
+title: Learner Analytics
+description: 
+keywords: 
+order: 0
+
+hero:
+    title: Analytics
+    text: Learner Analytics
+---
+```
+
+The page title and descriptions are included in not just the HTML title / description metas, but also in the page preview text on the content index pages. 
+
+## Layout Alternatives
+Each page must specify which template should be applied, these layout variables are limited to:
+
+* `documentation-single`
+* `product-single`
+* `content-single`
+
+## Promoting a page
+A page within a colleciton can be promoted to the primary CTA for the collection.
+
+![Promoting a Page](./resources/readme/content-promotion.png)
 
 
 # h1 Heading
