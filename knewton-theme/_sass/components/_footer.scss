@@ -5,6 +5,18 @@
 .c-footer {
 	color: $color-tundora;
 	font-size: .875rem;
+
+	ul {
+		list-style: none; 
+		text-align: right;
+	a {
+		border-bottom: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+		}
+	}
 }
 
 .c-footer--bordered {

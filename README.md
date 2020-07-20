@@ -5,10 +5,10 @@
     <img src="./knewton-theme/assets/images/layout/logo-kw.svg" alt="Logo" width="175">
   </a>
 
-  <h3 align="center">dev.knewton.com</h3>
+  <h1 style="border-bottom:none" align="center">dev.knewton.com</h3>
 
   <p align="center">
-    repository containing the dev.knewton.com jekyll theme and documentation
+    repository containing the dev.knewton.com jekyll theme for github pages and enterprise api, product and content documentation.
     <br />
     <br />
     <a href="https://dev.knewton.com"><strong>Explore »</strong></a>
@@ -17,8 +17,25 @@
   </p>
 </p>
 
+---
 
-# dev.knewton.com
+![dev.knewton.com](./resources/readme/project-screenshot.png)
+
+# Deploying / Editing locally
+
+Clone the repository, ensure the github repository is configured for github pages and that it's building from the master branch
+
+## Prerequisites for local deployment
+
+* jekyll
+
+```sh
+bundle exec jekyll serve
+```
+
+
+# Editing on 
+
 
 
 # h1 Heading
