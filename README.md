@@ -84,7 +84,7 @@ Each page must specify which template should be applied in the header `layout` v
 * `content-single`
 
 ## Promoting a page
-A page within a colleciton can be promoted to the primary CTA for the collection by specifying an order of -1. Only one page *should* be promoted at one time per collection.
+A page within a colleciton can be promoted to the primary CTA for the collection by specifying an order of `-1`. Only one page *should* be promoted at one time per collection.
 
 ![Promoting a Page](./resources/readme/content-promotion.png)
 
@@ -99,6 +99,6 @@ You can quickly edit existing content by using the github ui and commiting chang
 
 ## Adding new content
 
-By simply making changes to the text in the desired 
+You can navigate to the colleciton you want to add a new page to and add the content directly into github.
 
 ![New Content](./resources/readme/new-content-github.gif)
