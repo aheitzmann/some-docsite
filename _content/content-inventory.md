@@ -10,6 +10,8 @@ hero:
     text: How to submit content data to Knewton with the Content Inventory
 ---
 
+I'm making a change
+
 [![Content-Inventory](/resources/images/content-inventory-1.png)](/resources/images/content-inventory-1.png)
 
 You must submit content data to Knewton by constructing and delivering a Content Inventory. The Content Inventory (see above) is a spreadsheet that you periodically export from your system of record (preferably via CMS tools) and send to Knewton. It is a snapshot of your content data. Knewton relies on the Content Inventory to interpret messages sent by your learning application and to send accurate messages back.
