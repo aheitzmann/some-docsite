@@ -16,6 +16,17 @@ knewton:
             label: API Documentation
             url: /documentation
             icon: folder # https://feathericons.com
+    footer:
+        links:
+            - url: "https://www.knewton.com"
+              text: "Build with Knewton"
+              external: true
+            - url: "https://www.knewton.com"
+              text: "Legacy Documentation"
+              external: false
+            - url: "https://www.knewton.com"
+              text: "Knewton Alta"
+              external: false
     google_analytics:
         tracking_code: 
 

@@ -63,6 +63,7 @@
 			$( this ).addClass( 'active' );
 			$( '.pane' ).removeClass( 'active' );
 			$( '#pane-knewton-platform' ).addClass( 'active' );
+
 			current = panes.indexOf( $( this ).attr( 'id' ).replace( 'toggle-subcaption-', '' ).trim() );
 			
 			showCaption( current );
@@ -120,7 +121,6 @@
 			$( '#caption-' + panes[ index ] ).addClass( 'active' );
 		}
 
-		current = 0;
 		showCaption( current );
 	} );
 }( jQuery ) );

@@ -17,9 +17,13 @@
 
 					<div class="o-col-6 u-mt-6 u-mt-8@md u-mb-4 u-mb-6@md">
 						<ul>
-							<li><a href="#">Build with Knewton</a></li>
-							<li><a href="#">Legacy Documentation</a></li>
-							<li><a href="#">Knewton Alta</a></li>
+							{% for link in site.knewton.footer.links %}
+								{% if link.external == true %}
+									<li><a href="{{ link.url }}">{{ link.text }}</a></li>
+								{% else %}
+									<li><a href="{% if jekyll.environment == 'production' %}{{ site.knewton.baseurl }}{% endif %}{{ link.url }}">{{ link.text }}</a></li>
+								{% endif %}
+							{% endfor %}
 						</ul>
 					</div><!-- /.o-col -->
 
