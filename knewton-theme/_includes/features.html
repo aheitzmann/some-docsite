@@ -41,9 +41,9 @@
 
 			<div class="o-row">
 				<div class="o-col-12 u-mb-4 u-mr-auto">
-					<h2>How Knewton Works</h2>
+					<h2>{{ page.features.slider.title }}</h2>
 					<div class="u-text-md">
-						<p>some description</p>
+						<p>{{ page.features.slider.description }}</p>
 					</div>
 
 					<div id="how-knewton-works-slider">
@@ -70,73 +70,30 @@
 								<div class="pane" id="pane-knewton-platform">
 									<h4>Knewton<br>Platform</h4>
 									<ul>
-										<li id="toggle-subcaption-knowledge-graph" class="toggle-subcaption one">Knowledge Graph</li>
-										<li id="toggle-subcaption-accounts" class="toggle-subcaption two">Accounts and Profiles</li>
-										<li id="toggle-subcaption-registrations" class="toggle-subcaption three">Registrations and<br>Learning instances</li>
-										<li id="toggle-subcaption-goals" class="toggle-subcaption four">Goals</li>
-										<li id="toggle-subcaption-events" class="toggle-subcaption five">Learner Events</li>
-										<li id="toggle-subcaption-recommendations" class="toggle-subcaption six">Recommendations</li>
-										<li id="toggle-subcaption-analytics" class="toggle-subcaption seven">Analytics</li>
+										{% for subcaption in page.features.slider.subcaptions %}
+											<li id=" {{subcaption.id}}" class="toggle-subcaption {{ subcaption.pane }}">{{ subcaption.text }}</li>
+										{% endfor %}
 									</ul>
 								</div>
 							</div>
 		
 							<div id="how-knewton-works-slider-captions">
-								<a href="javascript:void(0);" id="prev-pane" class="pane-nav"><img src="https://dev.knewton.com/wp-content/themes/dev2/images/arrow-left.png"></a>
+								<a href="javascript:void(0);" title="Previous" alt="Previous" id="prev-pane" class="pane-nav"><img src="/knewton-theme/assets/images/slider/arrow-left.png"></a>
 								<div id="captions">
-									<div class="caption active" id="caption-learner">
-										<h5>Learner</h5>
-										<p>Learners interact with a partner-product by completing lessons, homework, and assessments.</p>
-									</div>
-		
-									<div class="caption" id="caption-partner-applications">
-										<h5>Partner Applications</h5>
-										<p>A partner’s learning application sends learner interaction and performance data to Knewton via the Knewton API. <a href="/product/building-a-new-application/">Read more ›</a></p>
-									</div>
-		
-									<div class="caption" id="caption-knewton-api">
-										<h5>Knewton API</h5>
-										<p>The Knewton API returns personalized recommendations and analytics to the partner’s learning application. <a href="/developer/api-overview/">Read more ›</a></p>
-									</div>
-		
-									<div id="caption-knowledge-graph" class="caption subcaption">
-										<h5>Knewton Platform <span>Knowledge Graph</span></h5>
-										<p>The Knewton platform maps the pedagogical relationships between the concepts in a partner’s content (lessons, homework, and assessments) to form a “knowledge graph.” Knewton uses this knowledge graph to interpret incoming data and recommend appropriate activities to the the learner. <a href="/product/create-structure-content/">Read more ›</a></p>
-									</div>
-		
-									<div id="caption-accounts" class="caption subcaption">
-										<h5>Knewton Platform <span>Accounts and Profiles</span></h5>
-										<p>The Knewton platform stores information about the users within the partner application to enable personalized and accelerated learning. <a href="/product/profiles/">Read more ›</a></p>
-									</div>
-		
-									<div id="caption-registrations" class="caption subcaption">
-										<h5>Knewton Platform <span>Registrations and Learning Instances</span></h5>
-										<p>The Knewton platform records the learning instances (classes, groups) and the registrations (learners, instructors) within those learning instances. <a href="/developer/learning-instances-registrations/ ">Read more ›</a></p>
-									</div>
-		
-									<div id="caption-goals" class="caption subcaption">
-										<h5>Knewton Platform <span>Goals</span></h5>
-										<p>The Knewton platform stores partner- or instructor-created learning goals (like assignments and quizzes) to define the scope and deadlines used to guide personalized recommendations. <a href="/product/create-goals/">Read more ›</a></p>
-									</div>
-		
-									<div id="caption-events" class="caption subcaption">
-										<h5>Knewton Platform <span>Learner Events</span></h5>
-										<p>The Knewton platform stores a history of all learner events sent via the API, including recommendations followed. <a href="/product/send-events/">Read more ›</a></p>
-									</div>
-		
-									<div id="caption-recommendations" class="caption subcaption">
-										<h5>Knewton Platform <span>Recommendations</span></h5>
-										<p>The Knewton platform returns personalized recommendations to the partner’s application. <a href="/product/receive-recommendations/">Read more ›</a></p>
-									</div>
-		
-									<div id="caption-analytics" class="caption subcaption">
-										<h5>Knewton Platform <span>Analytics</span></h5>
-										<p>The Knewton platform returns inferred metrics to drive visualizations in partner applications. <a href="/product/analyze-progress/">Read more ›</a></p>
-									</div>
+									{% for caption in page.features.slider.captions %}
+										<div id="{{ caption.id ]}}" class="caption">
+											<h5>{{ caption.title }} </h5>
+											<p>{{ caption.description }} <a href="{% if jekyll.environment == 'production' %}{{ site.knewton.baseurl }}{% endif %}{{ caption.url }}">Read more</a></p>
+										</div> 
+									{% endfor %}
 								</div>
-								<a href="javascript:void(0);" id="next-pane" class="pane-nav"><img src="https://dev.knewton.com/wp-content/themes/dev2/images/arrow-right.png"></a>
+								<a href="javascript:void(0);" title="Next" alt="Next" id="next-pane" class="pane-nav"><img src="/knewton-theme/assets/images/slider/arrow-right.png"></a>
 							</div>
 						</div>
+					</div>
+
+					<div class="u-text-md">
+						<p>{{ page.features.slider.terminator }}</p>
 					</div>
 
 				</div><!-- /.o-col -->

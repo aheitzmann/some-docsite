@@ -23,7 +23,6 @@
 		$( '.js-post' ).find( 'table' ).wrap( '<div class="o-responsive-table"></div>' );
 	} );
 
-
 	/**
 	 * Knewton Slider
 	 */
@@ -50,13 +49,13 @@
 			$( this ).addClass( 'active' );
 			current = panes.indexOf( $( this ).attr( 'id' ).replace( 'pane-', '' ) );
 
-			if ( current == 3 ) {
+			if ( current === 3 ) {
 				current++;
 				$( '.caption-' + panes[ current ] ).addClass( 'active' );
 				$( '#toggle-subcaption-' + panes[ current ] ).addClass( 'active' );
 			}
 
-			show_caption( current );
+			showCaption( current );
 		} );
 
 		$( '.toggle-subcaption' ).on( 'click', function( e ) {
@@ -64,8 +63,9 @@
 			$( this ).addClass( 'active' );
 			$( '.pane' ).removeClass( 'active' );
 			$( '#pane-knewton-platform' ).addClass( 'active' );
-			current = panes.indexOf( $( this ).attr( 'id' ).replace( 'toggle-subcaption-', '' ) );
-			show_caption( current );
+			current = panes.indexOf( $( this ).attr( 'id' ).replace( 'toggle-subcaption-', '' ).trim() );
+			
+			showCaption( current );
 			e.stopPropagation();
 		} );
 
@@ -78,10 +78,10 @@
 			$( '.pane', $( '#how-knewton-works-slider-content' ) ).removeClass( 'active' );
 			$( '.toggle-subcaption' ).removeClass( 'active' );
 
-			var show_pane = current > 3 ? 3 : current;
-			$( '#pane-' + panes[ show_pane ] ).addClass( 'active' );
+			var showPane = current > 3 ? 3 : current;
+			$( '#pane-' + panes[ showPane ] ).addClass( 'active' );
 
-			if ( current == 3 ) {
+			if ( current === 3 ) {
 				current = 4;
 			}
 
@@ -89,7 +89,7 @@
 				$( '#toggle-subcaption-' + panes[ current ] ).addClass( 'active' );
 			}
 
-			show_caption( current );
+			showCaption( current );
 		} );
 
 		$( '#prev-pane' ).on( 'click', function() {
@@ -101,23 +101,26 @@
 			$( '.pane', $( '#how-knewton-works-slider-content' ) ).removeClass( 'active' );
 			$( '.toggle-subcaption' ).removeClass( 'active' );
 
-			if ( current == 3 ) {
+			if ( current === 3 ) {
 				current = 2;
 			}
 
-			var show_pane = current > 3 ? 3 : current;
-			$( '#pane-' + panes[ show_pane ] ).addClass( 'active' );
+			var showPane = current > 3 ? 3 : current;
+			$( '#pane-' + panes[ showPane ] ).addClass( 'active' );
 
 			if ( current >= 4 ) {
 				$( '#toggle-subcaption-' + panes[ current ] ).addClass( 'active' );
 			}
 
-			show_caption( current );
+			showCaption( current );
 		} );
 
-		function show_caption( index ) {
+		function showCaption( index ) {
 			$( '.caption' ).removeClass( 'active' );
 			$( '#caption-' + panes[ index ] ).addClass( 'active' );
 		}
+
+		current = 0;
+		showCaption( current );
 	} );
 }( jQuery ) );
