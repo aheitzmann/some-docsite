@@ -1,5 +1,6 @@
 knewton:
     baseurl: /some-docsite
+    highlighter: rouge
     title: dev.knewton.com - Knewton Enterprise Platform Documentation
     header:
         logo:

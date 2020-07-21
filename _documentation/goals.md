@@ -7,8 +7,110 @@ order: 0
 
 hero:
     title: Goals
-    text: Contextualising the learning experience
+    text: In a Knewton-powered learning applications, goals help express the scope and deadlines used to guide the recommendations delivered to a learner. A goal can be broad (“pass this final in four weeks at 90% overall score”) or much more specific (“achieve a target score on a specific weekly quiz”). Product designers and instructors can use goals to tailor a product or course to their needs. Goals are also used for contextual analytics.
+
 ---
+
+## **POST** <br> /learning-instances/{li_id}/scoped-goals
+
+Create a new goal
+
+**Request Body**
+
+```json
+{
+"name" : "Addition of single digit numbers",
+"targets": {
+"include" : [ "lref-lo56204", "lref-lo99879" ],
+"completion_behavior" : "all",
+"score" : 0.75
+},
+"timing" : {
+"relative_deadline" : "P2W1D8H"
+},
+"scope": {
+"remediation_depth" : "none",
+"exclude": [ "tref-TOC:Unit5" ]
+},
+"config" : {
+"analytics_enabled" : false,
+"assign_to" : "all"
+}
+}
+```
+
+**Response Body**
+
+```json
+{
+"id": "57466e95-6019-498d-9c42-9180aa663304",
+"last_updated": "2013-04-12T17:00:00.000Z",
+"name" : "Addition of single digit numbers",
+"targets": {
+"include" : [ "lref-lo56204", "lref-lo99879" ],
+"completion_behavior" : "all",
+"score" : 0.75
+},
+"timing" : {
+"end": "2013-04-28T01:00:00.000Z",
+"relative_deadline" : "P2W1D8H"
+},
+"scope": {
+"remediation_depth" : "none",
+"exclude": [ "tref-TOC:Unit5" ]
+},
+"config" : {
+"analytics_enabled" : false,
+"assign_to" : "all"
+}
+}
+
+```
+
+### Request/Response JSON Keys
+
+| Parameter | Type | Optional | Description |
+| --- | --- | --- | --- | --- | --- |
+| name | string | No | Name of the goal _Warning_: Goal names must not contain any personally identifiable information (PII). Goal names containing email addresses in the name will be rejected. |
+| targets.include | array of content IDs | No | |
+| targets.score | float | No | | 
+| timing.end | DateTime | Yes | Timestamp indicating when the goal is supposed to be completed by. One of "end" or "relative\_deadline" must be specified. Must also be less than 2-years after last time the goal was updated. |
+| timing.relative\_deadline | DateTime | Yes | Relative duration of the goal, i.e. time until deadline for completion, specified as ISO 8601 duration string. One of "end" or "relative\_deadline" must be specified. |
+| scope.<br>remediation\_depth | string | Yes | Conceptual distance computed from learning objectives which targets are aligned to. Must be one of "none" (target content only), "one" (target content and all content prerequisites to target content), "two" (target content, all content prerequisite to target content and all content prerequisite to that prerequisite), "three" (target content, all content prerequisite to target content and two levels of content prerequisite to that prerequisite) or "maximum" (up to entity limit of recommendable modules). |
+| scope.include | List | Yes | List of taxon IDs (tref's) or module IDs (mref's) to be included in the recommendable pool. One of "include" or "remediation\_depth" must be specified. |
+| scope.exclude | List | Yes | List of taxon IDs (tref's) or module IDs (mref's) to be excluded from the recommendable pool. Defaults to \[\]. |
+| config.analytics\_enabled | boolean | Yes | Flag to indicate whether to compute goal-based analytics or not. Defaults to false. **If false, analytics requests for this goal will return empty payloads.** |
+| config.assign\_to | string | Yes | Specifies the types of registrations to assign the goal to when it's created. One of "learners", "instructors" or "all". Defaults to not assigning the goal to any registrations. |
+| id | UUID | No | Goal ID |
+| last\_modified | DateTime | No | Time the goal was last created or modified |
+| completion\_criteria | object | Yes | See the fields in this object below. Cannot be used if targets.score is used. Requires the goal to be defined with learning objective targets. |
+| completion\_criteria.<br>min\_predicted\_mastery | float | Yes | The minimum score the student must achieve to be eligible for target completion, using the Predicted Mastery analytic. |
+| completion\_criteria.<br>min\_work\_per\_target | int | Yes | The minimum number of assessing interactions the student must have on a target's concepts to be eligible for target completion. |
+| completion\_criteria.<br>max\_work\_on\_goal | int | Yes | The maximum number of interactions (assessing and instructing) the student can have toward a goal (including on-target and off-target work), after which they'll achieve status "complete_max_work" on the goal, regardless of mastery. They will still receive recommendations, and if they complete via mastery, the status will become "complete". |
+
+
+### Path Parameters
+
+| Parameter | Type | Description |
+| --- | --- | --- | --- | --- |
+| li\_id | UUID  | ID of the learning instance that owns the goal |
+
+### Samples
+
+**URL:**
+`https://api.knewton.com/v0/learning-instances/d0effd52-c3a7-4a3c-827a-3ac5eaa049a1/scoped-goals`
+
+
+
+<aside class="notice">Use the account of an Instructor in the learning instance in order to create a goal.</aside>
+
+
+
+
+Version: 0
+
+Create a goal
+
 
 Knewton goals can exist in one of several states, each of which directly impacts the behavior of Knewton recommendations and analytics. This section will discuss the lifecycle of a goal, and will go into detail around how goals move between states. It is to be noted that a single goal can be assigned to a subset of registrations in a learning instance, and at the same time, that goal may have been completed by other registrations in the same learning instance. In other words, a goal is said to be in a given state for a given registration.
 
@@ -25,7 +127,6 @@ When a goal is in the assigned state for one or more registrations, there are tw
 
 The following state diagram describes the movement of a goal across various states.
 
-[![Screen Shot 2016-08-29 at 1.27.04 PM](/images/Screen-Shot-2016-08-29-at-1.27.04-PM.png)](/images/Screen-Shot-2016-08-29-at-1.27.04-PM.png)
 
 As the first step, a client application makes an API call to create a goal within a learning instance. Once the goal is created, it can then be assigned to one or more registrations in the same learning instance, at which point the status is “in progress” for each of those registrations. As Knewton receives student events from the client application informing it of a learner’s performance against the assigned goal, the goal may move to the “ready” status for a particular registration if, upon receiving a graded event, Knewton determines that the learner has achieved an expected score greater than the target score defined in the goal. If the target score defined in the goal changes, the goal may move from the “ready” status to an “in progress” one for a particular registration.
 
@@ -196,91 +297,6 @@ Version: 0
 
 Create a goal
 
-### Request/Response JSON Keys
-
-| Parameter | Type | Optional | Immutable | In/Out | Description |
-| --- | --- | --- | --- | --- | --- |
-| name | string | No | No | In/Out | Name of the goal _Warning_: Goal names must not contain any personally identifiable information (PII). Goal names containing email addresses in the name will be rejected. |  |
-| targets.include | array of content IDs | No | No | In/Out |  |
-| targets.score | float | No | No | In/Out |  |
-| timing.end | DateTime | Yes | No | In/Out | Timestamp indicating when the goal is supposed to be completed by. One of "end" or "relative\_deadline" must be specified. Must also be less than 2-years after last time the goal was updated. |  |
-| timing.relative\_deadline | DateTime | Yes | No | In/Out | Relative duration of the goal, i.e. time until deadline for completion, specified as ISO 8601 duration string. One of "end" or "relative\_deadline" must be specified. |  |
-| scope.remediation\_depth | string | Yes | No | In/Out | Conceptual distance computed from learning objectives which targets are aligned to. Must be one of "none" (target content only), "one" (target content and all content prerequisites to target content), "two" (target content, all content prerequisite to target content and all content prerequisite to that prerequisite), "three" (target content, all content prerequisite to target content and two levels of content prerequisite to that prerequisite) or "maximum" (up to entity limit of recommendable modules). |  |
-| scope.include | List | Yes | No | In/Out | List of taxon IDs (tref's) or module IDs (mref's) to be included in the recommendable pool. One of "include" or "remediation\_depth" must be specified. |  |
-| scope.exclude | List | Yes | No | In/Out | List of taxon IDs (tref's) or module IDs (mref's) to be excluded from the recommendable pool. Defaults to \[\]. |  |
-| config.analytics\_enabled | boolean | Yes | Yes | In/Out | Flag to indicate whether to compute goal-based analytics or not. Defaults to false. **If false, analytics requests for this goal will return empty payloads.** |  |
-| config.assign\_to | string | Yes | Yes | In/Out | Specifies the types of registrations to assign the goal to when it's created. One of "learners", "instructors" or "all". Defaults to not assigning the goal to any registrations. |  |
-| id | UUID | No | Yes | Out | Goal ID |  |
-| last\_modified | DateTime | No | Yes | Out | Time the goal was last created or modified |  |
-| completion\_criteria | object | Yes | Yes | In/Out | See the fields in this object below. Cannot be used if targets.score is used. Requires the goal to be defined with learning objective targets. |  |
-| completion\_criteria.min\_predicted\_mastery | float | Yes | No | In/Out | The minimum score the student must achieve to be eligible for target completion, using the Predicted Mastery analytic. |  |
-| completion\_criteria.min\_work\_per\_target | int | Yes | No | In/Out | The minimum number of assessing interactions the student must have on a target's concepts to be eligible for target completion. |  |
-| completion\_criteria.max\_work\_on\_goal | int | Yes | No | In/Out | The maximum number of interactions (assessing and instructing) the student can have toward a goal (including on-target and off-target work), after which they'll achieve status "complete_max_work" on the goal, regardless of mastery. They will still receive recommendations, and if they complete via mastery, the status will become "complete". |  |
-
-### Path Parameters
-
-| Parameter | Type | Optional | Immutable | Description |
-| --- | --- | --- | --- | --- |
-| li\_id | UUID | No | Yes | ID of the learning instance that owns the goal |  |
-
-### Samples
-
-**URL:**
-`https://api.knewton.com/v0/learning-instances/d0effd52-c3a7-4a3c-827a-3ac5eaa049a1/scoped-goals`
-
-**Request Body**
-
-```json
-{
-"name" : "Addition of single digit numbers",
-"targets": {
-"include" : [ "lref-lo56204", "lref-lo99879" ],
-"completion_behavior" : "all",
-"score" : 0.75
-},
-"timing" : {
-"relative_deadline" : "P2W1D8H"
-},
-"scope": {
-"remediation_depth" : "none",
-"exclude": [ "tref-TOC:Unit5" ]
-},
-"config" : {
-"analytics_enabled" : false,
-"assign_to" : "all"
-}
-}
-```
-
-**Response Body**
-
-```json
-{
-"id": "57466e95-6019-498d-9c42-9180aa663304",
-"last_updated": "2013-04-12T17:00:00.000Z",
-"name" : "Addition of single digit numbers",
-"targets": {
-"include" : [ "lref-lo56204", "lref-lo99879" ],
-"completion_behavior" : "all",
-"score" : 0.75
-},
-"timing" : {
-"end": "2013-04-28T01:00:00.000Z",
-"relative_deadline" : "P2W1D8H"
-},
-"scope": {
-"remediation_depth" : "none",
-"exclude": [ "tref-TOC:Unit5" ]
-},
-"config" : {
-"analytics_enabled" : false,
-"assign_to" : "all"
-}
-}
-
-```
-
-<aside class="notice">Use the account of an Instructor in the learning instance in order to create a goal.</aside>
 
 ## PUT /learning-instances/{li\_id}/scoped-goals/{goal\_id}
 
@@ -296,7 +312,7 @@ Update an existing goal. This change will apply to all registrations which curre
 | targets.include | array of content IDs | No | No | In/Out |  |
 | targets.score | float | No | No | In/Out |  |
 | scope.exclude | List | Yes | No | In/Out | List of taxon IDs (tref's) or module IDs (mref's) to be excluded from the recommendable pool. Defaults to \[\]. |  |
-| scope.remediation\_depth | string | Yes | No | In/Out | Conceptual distance computed from learning objectives which targets are aligned to. Must be one of "none" (target content only), "one" (target content and all content prerequisites to target content), "two" (target content, all content prerequisite to target content and all content prerequisite to that prerequisite), "three" (target content, all content prerequisite to target content and two levels of content prerequisite to that prerequisite) or "maximum" (up to entity limit of recommendable modules). If neither "include" nor "remediation\_depth" is specified, this will default to "remediation\_depth": "maximum". |  |
+| scope.<br>remediation\_depth | string | Yes | No | In/Out | Conceptual distance computed from learning objectives which targets are aligned to. Must be one of "none" (target content only), "one" (target content and all content prerequisites to target content), "two" (target content, all content prerequisite to target content and all content prerequisite to that prerequisite), "three" (target content, all content prerequisite to target content and two levels of content prerequisite to that prerequisite) or "maximum" (up to entity limit of recommendable modules). If neither "include" nor "remediation\_depth" is specified, this will default to "remediation\_depth": "maximum". |  |
 | scope.include | List | Yes | No | In/Out | List of taxon IDs (tref's) or module IDs (mref's) to be included in the recommendable pool. One of "include" or "remediation\_depth" must be specified. |  |
 | timing.end | DateTime | Yes | No | In/Out | Timestamp indicating when the goal is supposed to be completed by. One of "end" or "relative\_deadline" must be specified. Must also be less than 2-years after last time the goal was updated. |  |
 | timing.relative\_deadline | DateTime | Yes | No | In/Out | Relative duration of the goal, i.e. time until deadline for completion, specified as ISO 8601 duration string. One of "end" or "relative\_deadline" must be specified. |  |
