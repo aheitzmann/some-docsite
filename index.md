@@ -1,15 +1,15 @@
 ---
-# Page settings
-layout: homepage # Choose layout: "default", "homepage" or "documentation-archive"
-title: # Define a title of your page
-description: # Define a description of your page
+layout: homepage
+title: Knewton Enterprise Platform Documentation
+title: 
+description: Design, Build and Integrate world class adaptive learning products with the Knewton Enterprise Platform
 keywords: # Define keywords for search engines
 
-# Hero section
+# Hero
 hero:
-    title: Knewton Enterprise Documentation
+    title: Knewton Enterprise <br> Platform Documentation
     text: Design, Build and Integrate world class adaptive learning products with the Knewton Enterprise Platform
-    background_image: # url
+    background_image: 
     buttons: 
       - label: Get Started
         url: /documentation
@@ -17,21 +17,21 @@ hero:
         style: bordered # "filled" or "bordered"
         icon: chevron-right # https://feathericons.com
         
-# Features section
+# Features
 features:
     rows: 
         - title: Knewton Enterprise Adaptive Learning Platform
           description: Knewton is an education technology company that provides a flexible and powerful adaptive learning platform on which partners can build digital products. Knewton personalizes learning paths so every learner is engaged and supported to reach their full potential.
-          grid: # Add feature grid items below, there are examples with all available options
+          grid:
               - title: Adaptive Recommendations
-                description: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident iste voluptas sunt eligendi sit dolorem blanditiis nostrum, fuga ducimus enim? Ut temporibus.
-                icon: box 
+                description: A recommendation is a piece of content that Knewton has determined to be most relevant for a student at a given time, considering what is known about what they have done. 
+                icon: help-circle # https://feathericons.com
               - title: Learner Analytics
-                description: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident iste voluptas sunt eligendi sit dolorem blanditiis nostrum, fuga ducimus enim? Ut temporibus.
-                icon: server
+                description: Analytics are calculated from the learner’s performance, history and goals. They help the instructor predict how a student will perform if they continue along their current path without intervention.
+                icon: bar-chart-2 # https://feathericons.com
               - title: Content Insights
-                description: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident iste voluptas sunt eligendi sit dolorem blanditiis nostrum, fuga ducimus enim? Ut temporibus.
-                icon: cpu
+                description: Based upon how your learners have consumed recommended content, content insights help figure out how well your content is performing, and help priotise editor efforts.
+                icon: check-circle # https://feathericons.com
     slider:
       title: How Knewton Works
       description: The Knewton platform is accessed through the flexible Knewton API, and is built to power an array of features within existing or new digital education products. Partners can harness the Knewton API to create continuously adaptive learning experiences. A learner-facing product sends learner interaction and performance data to Knewton, then receives personalized recommendations and analytics via the Knewton API.

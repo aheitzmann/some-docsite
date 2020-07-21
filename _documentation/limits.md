@@ -10,7 +10,7 @@ hero:
     text: Ensuring performant adaptive experiences
 ---
 
-# Rate Limits
+## Rate Limits
 
 Knewton enforces a set of _rate limits_, i.e. limits on frequency and volume of interactions with the Knewton API. These limits ensure that no one user can impact the availability of the system for other users on our multi-tenant platform. Rate limits are designed to accommodate use-cases of most applications. Partners should contact their Knewton Implementation Architect if their applications are frequently rate-limited by Knewton’s APIs.
 
@@ -34,7 +34,6 @@ Access Token based rate limiting is enforced on a per token-URI-endpoint triple 
 In case a triple exceeds the quota, Knewton will respond with an HTTP 429 error with the `X-Knewton-Rate-Exceeded` header, implying that the client application has exceed the rate limit for that token-URI-endpoint triple. Exhausting the quota on one endpoint does not mean that the application must wait to make calls to other endpoints.
 
 
-
 # Entity Limits
 
 The Knewton API maintains a set of limits for different resources within the system. The table below specifies these limits. An error will be thrown if these limits are reached.
@@ -53,10 +52,7 @@ The Knewton API maintains a set of limits for different resources within the sys
 | Goals assigned per registration (total) | 200 |
 | Goals assigned per registration (with config.analytics\_enabled:true, or using [deprecated APIs](https://dev.knewton.com/developer/api-reference/deprecated-apis/) for goals, metrics\_enabled:true) | 50 |
 | Focused goals per registration | 3 (most recently focused) |
-| Target modules per goal (individual assets represented by module\_ids or learning\_objectives) | 750 for config.analytics\_enabled=true goals
-7500 for config.analytics\_enabled=false goals
-
- |
+| Target modules per goal (individual assets represented by module\_ids or learning\_objectives) | 750 for config.analytics\_enabled=true goals 7500 for config.analytics\_enabled=false goals |
 | Recommendable modules per goal | 15000 |
 | Includes and excludes modules/taxons per goal (for scope.include and scope.exclude) | 50 for scope.include and 100 for scope.exclude |
 | Goals per learning instance | 5000 |
@@ -66,16 +62,12 @@ The Knewton API maintains a set of limits for different resources within the sys
 | Student events per batch | 500 |
 | Registrations per batch to assign a goal to or unassign a goal from | 500 |
 | Account creation requests per batch | 50 |
-| Goal IDs or taxons allowed in query parameter set for /rows analytics endpoint requests | 50 taxon IDs
-or
-40 goal IDs
-(no mix & matching) |
-| Goal IDs or taxons allowed in query parameter set for smart grouping reports | 50 total taxon IDs and/or goal IDs
-(mix & matching allowed) |
+| Goal IDs or taxons allowed in query parameter set for /rows analytics endpoint requests | 50 taxon IDs or 40 goal IDs (no mix & matching) |
+| Goal IDs or taxons allowed in query parameter set for smart grouping reports | 50 total taxon IDs and/or goal IDs (mix & matching allowed) |
 
 # Rate Limits
 
-The Knewton API maintains a set of rate limits for different endpoints within the system. The table below specifies these limits. The logic for enforcing these limits is can be referenced [here](https://dev.knewton.com/developer/rate-limits-overview/).
+The Knewton API maintains a set of rate limits for different endpoints within the system. The table below specifies these limits. 
 
 | Action | Endpoint | Rate Limit |
 | --- | --- | --- |

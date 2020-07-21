@@ -10,8 +10,6 @@ hero:
     text: How to submit content data to Knewton with the Content Inventory
 ---
 
-I'm making a change
-
 [![Content-Inventory](/resources/images/content-inventory-1.png)](/resources/images/content-inventory-1.png)
 
 You must submit content data to Knewton by constructing and delivering a Content Inventory. The Content Inventory (see above) is a spreadsheet that you periodically export from your system of record (preferably via CMS tools) and send to Knewton. It is a snapshot of your content data. Knewton relies on the Content Inventory to interpret messages sent by your learning application and to send accurate messages back.
@@ -24,7 +22,7 @@ The above diagram illustrates how Knewton uses the Content Inventory to pass dat
 
 The Content Inventory also contains an optional section titled “LO-LO Map”. Here, you can specify the relationships between your Learning Objectives. Please consult with your integration team on whether this tab is appropriate for your integration, and how to fill it out.
 
-# How Knewton helps you define your Content Inventory
+## How Knewton helps you define your Content Inventory
 
 Submitting a Content Inventory to Knewton is a slightly different process for every organization. Your Knewton integration team will consult with you to define your Content Inventory, how it will be exported, and when you will submit it to Knewton for processing.
 
@@ -36,7 +34,7 @@ This consultation has three steps:
 
 *   **You submit a test Content Inventory.** Once the data dictionary is completed, we’ll help you export a corresponding Content Inventory. We’ll test this file immediately and walk you through any issues that we find. Delivering this sample early is the best way to discover any unexpected obstacles and prepare you for successful handoffs to Knewton.
 
-# How to submit your Content Inventory
+## How to submit your Content Inventory
 
 Once your sample has passed testing, you will be cleared to move forward with routine Content Inventory submission whenever all of your content is ready for integration.
 
@@ -55,7 +53,7 @@ If your Content Inventory does not pass validation, you must either adjust your 
 
 This cycle will repeat until a Content Inventory is validated with zero (0) errors. Validation is typically performed multiple times before all issues are successfully identified and eliminated.
 
-# How to submit and resolve issues in your Content Inventory
+## How to submit and resolve issues in your Content Inventory
 
 1.  Email your Content Inventory .xlsx file to your integration team.
 2.  Receive a validation report from Knewton, via email.
@@ -71,7 +69,7 @@ This cycle will repeat until a Content Inventory is validated with zero (0) erro
 
 This cycle will repeat until a Content Inventory is validated with zero (0) errors. Then the handoff will be complete. You will receive a confirmation that your Content Inventory is valid, and that content processing has begun. You will receive another notification when content processing is complete.
 
-# Content Inventory template, fields, and requirements
+## Content Inventory template, fields, and requirements
 
 **[See the Content Inventory template.](https://docs.google.com/spreadsheets/d/1rLtu6sqNJWLfjOQD3R_6o7Jzi9IPZ-m5dnKl3wizjgI/edit)**  Please note that this template has many fields, and some may not be necessary for your learning application. Your integration team will assist you by tailoring the template to your specific needs and consulting on how the Content Inventory .xlsx file can be most effectively exported.
 
@@ -84,11 +82,11 @@ This cycle will repeat until a Content Inventory is validated with zero (0) erro
 *   whether the field has a limit on how many values can be submitted
 *   any other guidelines for successfully filling and submitting data
 
-## Comprehensive Key to Content Inventory Validation Report
+### Comprehensive Key to Content Inventory Validation Report
 
 **[See a complete key](https://docs.google.com/a/knewton.com/spreadsheets/d/17pUbRtiojp0N6qqGe7QPg9AH6vjqq6tbAGQDk0o1lVg/edit?usp=drive_web)** to Errors and Warnings returned during Content Inventory Validation.
 
-# Supported Content Inventory versions: v1.3 versus v1.4
+## Supported Content Inventory versions: v1.3 versus v1.4
 
 As of 12/20/16, the current version of the Content Inventory (v1.4) has a few small format differences from its predecessor. It supports additional validation and the submission of your LO-LO (prerequisite) map in the same file as your Content Inventory. If you are unsure of which version of the Content Inventory you are currently using, please consult with your integration team. If you are just beginning integrating a product with Knewton, please use the version provided to you by your integration team.
 

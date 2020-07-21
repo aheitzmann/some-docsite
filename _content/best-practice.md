@@ -25,7 +25,7 @@ Partners should also think about two other factors in particular:
 
 These qualities and factors are described in more detail below.
 
-# Granularity
+## Granularity
 
 Granularity refers to the sizes of the pieces of content within the course. There are two granularities that need to be defined:
 
@@ -40,7 +40,7 @@ Communicating student interactions at the most granular level possible gives Kne
 *   A learning objective that is taught by a 3-page subsection of a textbook
 *   A learning objective that can be assessed sufficiently with 10 questions
 
-# Alignment
+## Alignment
 
 It is important for content in an adaptive course to be well-aligned.
 
@@ -62,11 +62,11 @@ Here, the instructional lessons are contained in a way that does not correspond 
 
 **Note:** The Knewton system is designed to handle misalignment as best it can. If content has already been developed and grouped in such a way that there is misalignment, our system can still function.
 
-# Discreteness
+## Discreteness
 
 Related to granularity and alignment is the notion of discreteness. A course with discrete content has minimal overlap among both a) learning objectives and b) the content that is aligned to these learning objectives. Discreteness doesn’t mean that learning objectives aren’t related — indeed, in many cases, they build on one another. The important point is that content should be developed or curated around distinct learning objectives, so that instruction and assessment can be more targeted and precise.
 
-# Modularity
+## Modularity
 
 Unlike traditional linear courses, which contain units that must be delivered in a certain sequence, modular courses contain units that can be delivered in a variety of orders, depending on the individual’s needs. In general, it is easier to integrate adaptive learning technology into more modular courses.
 
@@ -74,7 +74,7 @@ Because Knewton attempts to find the ideal learning path for each student, there
 
 Modular courses can still contain structure and enable instructors to set strong linear milestones. Knewton Recommendations can be embedded in a way that supports existing product flows, such as instructor-created assignments and comprehensive final exams. Moreover, partners — and the end users of a partner’s product — can help guide Recommendations by setting a goal for each recommendation request and identifying a list of content assets that can be recommended at any time.
 
-# Volume
+## Volume
 
 Volume of content is the amount of content available for Knewton to recommend. The Knewton system is designed to work with large volumes of content but can also adapt to work with smaller volumes. If a student gets stuck on a certain learning objective and there is little content available to recommend to her, Knewton will recommend the best available piece of content, given that constraint. In other words, “gaps” or “lightness” in content do not block Knewton from functioning.
 
@@ -84,7 +84,7 @@ Similarly, a greater volume of assessment content allows Knewton to make the bes
 
 A greater volume of content doesn’t mean that every student will interact with that greater volume. Additional instruction or assessment will only be delivered to those students who need it, on a per-learning objective basis.
 
-# Assessment Components
+## Assessment Components
 
 Assessments have many different components, each of which impacts Knewton’s ability to generate reliable proficiency estimates. The table below gives a sense of the type of data that Knewton makes use of.
 
@@ -101,7 +101,7 @@ For the most part, the above considerations — granularity, alignment, discrete
 *   _Modularity_: If Knewton Recommendations exist in a secondary workflow (e.g., a secondary “intelligent tutor on the side” study plan) and can, to the extent possible, draw from a pool of assets that do not refer to any predetermined ordering scheme, then the primary workflow can still make use of ordered assets, such as pre-tests, post-tests, or numbered lessons. Knewton Recommendations will appear as updates on a secondary interface that students can access whenever they need additional assistance. Furthermore, partners can establish linear (or rule-based) flows by assembling atoms into bundles and controlling the flow within a bundle.
 *   _Granularity_ of recommendable objects: If Knewton Recommendations drive the primary workflow, the partner may wish to bundle content into larger assets for a more cohesive learning experience. If, on the other hand, the primary workflow is driven by instructor-created assets (e.g., assignments), then there may not be a need for a partner to create these bundles upfront.
 
-# Algorithmic Questions
+## Algorithmic Questions
 
 An algorithmic question is an question where one or more parts can be dynamically or “algorithmically” generated. For example, instead of having separately graphed assessment items for the questions “3 + 5 = ?”, “8 + 2 = ?”, “4 + 7 = ?”, etc., the partner can have a single _algorithmic question_, which dynamically generates the correct answer to any problem consisting of adding two single-digit numbers.
 

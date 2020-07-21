@@ -24,7 +24,7 @@ On the other hand, two pieces of content with identical properties but different
 
 To the human eye, it’s obvious that these two questions are one and the same. However, a computer will treat these as two completely unique questions. Knewton might recommended the question on the left, then further test the student’s knowledge by recommending the question on the right — not realizing that the student has already answered it.
 
-# Why Knewton requires content data
+## Why Knewton requires content data
 
 The table below lists the major types of content data for a Knewton integration. Each type of data you use will require a set of IDs — and will offer you and your users concrete benefits.
 

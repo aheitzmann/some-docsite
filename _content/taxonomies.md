@@ -10,13 +10,13 @@ hero:
     text: Why, how, and when to submit Taxonomies
 ---
 
-# What is a Taxonomy?
+## What is a Taxonomy?
 
 A Taxonomy is a deliberately structured collection of tags that you can use to identify sets of Atoms and Containers that should be recommendable in [Goals](/documentation/goals)
 
 **Taxonomies are often pulled directly from your existing content metadata.** In many cases, Taxonomies can represent an existing hierarchy in your content’s structure (e.g., Table of Contents) or standards (e.g., Common Core State Standards).
 
-# What is a Taxon?
+## What is a Taxon?
 
 A Taxon is a tag used to classify an Atom or Container in the Content Inventory.
 
@@ -24,7 +24,7 @@ A Taxon can also be single level of a hierarchical Taxonomy. A Taxon can exist a
 
 Multiple Taxons can be used to tag the same Atom or Container.
 
-# Example of a Taxonomy that contains multiple Taxons
+## Example of a Taxonomy that contains multiple Taxons
 
 The Common Core State Standards (CCSS) is a hierarchical Taxonomy. The diagram below translates a path through 6 levels of the hierarchy [CCSS.Math.Content.8.G.B.7](http://www.corestandards.org/Math/Content/8/G/B/7/) into the format required by the Knewton API CCSS:Math\|Content\|8\|G\|B\|7.
 
@@ -36,7 +36,7 @@ In **Goals** (which configure Recommendation behavior), Taxons can be used as sh
 
 Your integration team will help you design Taxonomies that enable use of Learning Analytics and Goals.
 
-# Requirements and guidelines for Taxonomy submission via Content Inventory
+## Requirements and guidelines for Taxonomy submission via Content Inventory
 
 All fully specified Taxons should follow Knewton’s [content ID guidelines](https://dev.knewton.com/developer/api-overview/#content_ids). In order to recognize Taxons for Learning Analytics and Goals, Knewton must look up those Taxons in the corresponding Content Inventory. Knewton won’t be able to respond to API requests made before the Content Inventory is successfully processed.
 
@@ -49,7 +49,7 @@ All fully specified Taxons should follow Knewton’s [content ID guidelines](htt
     *   To tag with “8th Grade”, enter **Math\|Content\|8th Grade**
     *   To tag with “7”, enter **Math\|Content\|8th Grade\|Geometry\|B\|7**
 
-# Acceptable Taxon formatting and special character requirements
+## Acceptable Taxon formatting and special character requirements
 
 The Content Inventory accepts all languages that are submitted in [Unicode UTF-8](http://unicode.org/faq/utf_bom.html#utf8-1). However, Knewton does have [special character guidelines](https://dev.knewton.com/product/submit-content-data-knewton-content-inventory/). Incorrectly formatted Taxon values may result in unexpected behavior, so please note how Knewton interprets these characters in Taxons:
 

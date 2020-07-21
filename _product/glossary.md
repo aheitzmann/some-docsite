@@ -1,6 +1,6 @@
 ---
 layout: 'product-single'
-title: Platform Glossary
+title: Glossary
 description: Glossary of common platform terms
 keywords: 
 order: 0 
