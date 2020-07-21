@@ -1,5 +1,5 @@
-<!-- PROJECT LOGO -->
 <br />
+
 <p align="center">
   <a href="/">
     <img src="./knewton-theme/assets/images/layout/logo-kw.svg" alt="Logo" width="250">
@@ -18,36 +18,63 @@
 </p>
 
 ---
-
-![Knewton Enterprise Devsite](./resources/readme/project-screenshot.png)
+<br>
 
 ## Table of Contents
 
-- [Deploying and Editing Locally](#deploying-and-editing-locally)
+- [Deploying and Editing locally](#deploying-and-editing-locally)
   - [Prerequisites](#prerequisites)
+  - [_config.yml](#_configyml)
 - [Project Structure](#project-structure)
   - [Page Structure](#page-structure)
   - [Layout Alternatives](#layout-alternatives)
   - [Promoting a page](#promoting-a-page)
+  - [The Template Page](#the-template-page)
 - [Editing Content](#editing-content)
   - [Editing existing content](#editing-existing-content)
   - [Adding new content](#adding-new-content)
 
+<br>
 
-# Deploying and Editing Locally
+---
 
-Clone the repository, ensure the github repository is configured for github pages and that it's building from the master branch
+<br>
+
+# Deploying and Editing locally
+
+In your clone or fork, ensure the github repository is configured for github pages, and that it's configured to build from the master branch.
 
 ## Prerequisites
 
+* ruby
 * jekyll
 
 ```sh
 bundle exec jekyll serve
 ```
 
+## _config.yml
+`_config.yml` contains all of the basic properties for managing an instance of the site, including complete nav / footer link customisations.
+
+**NOTE:** If you make any changes to the properties or values in `_config.yml` you must restart the terminal.
+
+Ensure you edit the following base url and google analytics values:
+
+```
+knewton:
+    baseurl: /some-sub-domain
+    google_analytics:
+        tracking_code: x
+```
+
+<br>
+
+---
+
+<br>
+
 # Project Structure
-The project is broken down into three key content structures, allowing product, tech and content to own and manage their own sections of the website.
+The project is broken down into three key content structures (jekyll collections).
 
 `Content`, `Documentation` and `Product` are both folders and application collections that will update when new files are added following the page template requirements
 
@@ -87,6 +114,19 @@ Each page must specify which template should be applied in the header `layout` v
 A page within a colleciton can be promoted to the primary CTA for the collection by specifying an order of `-1`. Only one page *should* be promoted at one time per collection.
 
 ![Promoting a Page](./resources/readme/content-promotion.png)
+
+## The Template Page
+In the root directory exists a markdown file called `template.md`. This page takes advantage of the `documentation-single` layout to provide a basic demo / template page to make starting new documentation pages easier. This template also includes markdown basics like titles, images, tables, code, lines etc
+
+You can view the compiled template page by navigating to `/template` 
+
+![The Template Page](./resources/readme/template-page.png)
+
+<br>
+
+---
+
+<br>
 
 # Editing Content
 All content is editable following the markdown syntax (https://www.markdownguide.org/getting-started/)

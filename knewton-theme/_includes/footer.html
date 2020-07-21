@@ -19,7 +19,7 @@
 						<ul>
 							{% for link in site.knewton.footer.links %}
 								{% if link.external == true %}
-									<li><a href="{{ link.url }}">{{ link.text }}</a></li>
+									<li><a target="_blank" href="{{ link.url }}">{{ link.text }}</a></li>
 								{% else %}
 									<li><a href="{% if jekyll.environment == 'production' %}{{ site.knewton.baseurl }}{% endif %}{{ link.url }}">{{ link.text }}</a></li>
 								{% endif %}
