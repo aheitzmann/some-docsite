@@ -10,7 +10,7 @@ hero:
     text: Testing your Knewton Integration
 ---
 
-### X-Knewton-Test
+## X-Knewton-Test
 
 Setting the `X-Knewton-Test` header to `true` (i.e. `X-Knewton-Test: true`) allows API users to create [Test Accounts](https://dev.knewton.com/developer/authentication-accounts-profiles/).
 
@@ -24,12 +24,9 @@ Some key points to keep in mind when using the `X-Knewton-Test` header:
 
 If you have any questions about the test header, please reach out to your Knewton Implementation Architect or Partnership Manager.
 
-### Request-label
+## Request-label
 
 In addition to the test header, Knewton also allows including a header `request-label: <string>` with an API call. By doing so, this header will be propagated all the way through the Knewton logs. This way, a partner can ask about a specific request label and Knewton can quickly identify, track, and debug that call.
-
-
-
 
 ## Load-testing the integration
 
