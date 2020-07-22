@@ -28,7 +28,7 @@ knewton:
               text: "Knewton Alta"
               external: false
     google_analytics:
-        tracking_code: 
+        tracking_code: UA-23652421-3
 
 # Defining collections
 collections:
