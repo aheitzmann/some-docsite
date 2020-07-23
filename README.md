@@ -25,12 +25,16 @@
 - [Deploying and Editing locally](#deploying-and-editing-locally)
   - [Prerequisites](#prerequisites)
   - [_config.yml](#_configyml)
+  - [Configuring Github / Github Pages](#configuring-github--github-pages)
 - [Project Structure](#project-structure)
   - [Page Structure](#page-structure)
   - [Layout Alternatives](#layout-alternatives)
   - [Promoting a page](#promoting-a-page)
   - [The Template Page](#the-template-page)
 - [Editing Content](#editing-content)
+  - [Relative Urls for Images and Links](#relative-urls-for-images-and-links)
+    - [Relative URL for an Image](#relative-url-for-an-image)
+  - [Adding images for pages](#adding-images-for-pages)
   - [Editing existing content](#editing-existing-content)
   - [Adding new content](#adding-new-content)
 
@@ -67,6 +71,15 @@ knewton:
         tracking_code: x
 ```
 
+## Configuring Github / Github Pages
+In github, you must configure the repository as a github pages project. You also need to ensure you select either the Master branch, or your desired branch before the page will build.
+
+![Configure Github Pages](./resources/readme/configure-github-pages.gif)
+
+In this same section you can configure your custom domain name after github pages has been enabled and correctly configured.
+
+**Note:** The repository must be public
+
 <br>
 
 ---
@@ -101,7 +114,7 @@ Your markdown / page content lives here
 
 **NOTE:** See the preview template page at /template for a full example
 
-The page title and descriptions are included in not just the HTML title / description metas, but also in the page preview text on the content index pages. 
+The page title and descriptions are included in not just the HTML title / description META, but also in the page preview text on the content index pages. 
 
 ## Layout Alternatives
 Each page must specify which template should be applied in the header `layout` variable, these layout variables are limited to:
@@ -111,7 +124,7 @@ Each page must specify which template should be applied in the header `layout` v
 * `content-single`
 
 ## Promoting a page
-A page within a colleciton can be promoted to the primary CTA for the collection by specifying an order of `-1`. Only one page *should* be promoted at one time per collection.
+A page within a collection can be promoted to the primary CTA for the collection by specifying an order of `-1`. Only one page *should* be promoted at one time per collection.
 
 ![Promoting a Page](./resources/readme/content-promotion.png)
 
@@ -131,8 +144,22 @@ You can view the compiled template page by navigating to `/template`
 # Editing Content
 All content is editable following the markdown syntax (https://www.markdownguide.org/getting-started/)
 
+## Relative Urls for Images and Links
+Because of the project structure, the entire thing can be hosted off multiple repositories / folders / subdomains. In `_config.yml` you set the base url variable per instance of the site, e.g: `knewton: baseurl: /some-docsite/`
+
+To ensure links are always relative to the location, you must specify the relative_url filter when building the links. for example
+
+### Relative URL for an Image
+
+`![Two different ways of managing the same ebook content]({{ '/resources/images/content-integrated-1.png' | relative_url }})`
+
+Note the `relative_url` syntax
+
+## Adding images for pages
+Images that relate to the content are contained in `/resources/images` please ensure you appropriately name your image files. e.g: `content-inventory-1.png` or `documentation-workflow-1.png`
+
 ## Editing existing content
-You can quickly edit existing content by using the github ui and commiting changes back. These changes will be automatically collected by github and the content re-generated in almost real time.
+You can quickly edit existing content by using the github ui and committing changes back. These changes will be automatically collected by github and the content re-generated in almost real time.
 
 ![Edit Existing Content](./resources/readme/editing-content-github.gif)
 

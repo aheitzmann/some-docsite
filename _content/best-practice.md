@@ -44,7 +44,7 @@ Communicating student interactions at the most granular level possible gives Kne
 
 It is important for content in an adaptive course to be well-aligned.
 
-![Content Best Practice](/resources/images/content-best-practice-1.png)
+![Content Best Practice]({{ '/resources/images/content-best-practice-1.png' | relative_url }})
 
 The visual above shows proper content alignment. Here, each letter represents a particular learning objective: A, B, or C. The boxes in the top row represent assessment content assets, each of which assesses a particular learning objective (as labelled). The boxes in the bottom row represent instructional content assets; here, each asset teaches a given objective (as labelled).
 
