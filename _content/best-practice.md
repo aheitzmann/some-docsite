@@ -50,13 +50,13 @@ The visual above shows proper content alignment. Here, each letter represents a 
 
 Choices about how content is placed in containers can lead to a case of misalignment, as in the diagram below:
 
-![Content Best Practice](/resources/images/content-best-practice-2.png)
+![Content Best Practice]({{ '/resources/images/content-best-practice-2.png' | relative_url }})
 
 Here, the large box in the top row represents a single quiz, which simultaneously assesses learning objectives A, B, and C. A teacher could not assess a student on the single learning objective A — even if she were already confident in her measure of the student’s proficiencies on learning objectives B and C.
 
 There are other opportunities for inefficiencies to arise. Consider the visual below:
 
-![Content Best Practice](/resources/images/content-best-practice-3.png)
+![Content Best Practice]({{ '/resources/images/content-best-practice-3.png' | relative_url }})
 
 Here, the instructional lessons are contained in a way that does not correspond with the containment of the assessment items. In a scenario like this, after assessing a student on learning objective A and realizing that he does not understand it, an instructor might want to instruct him further on this learning objective. In the above scenario, however, the instructor would need to show the student instructional content about learning objective X and learning objective Y as well. These learning objectives may not be worthwhile for the student to study — perhaps because they are not relevant for the course, perhaps because he is not yet prepared to learn them.
 
@@ -92,7 +92,7 @@ Note that these data types are interrelated. For example, the fact that a partne
 
 This chart is sorted in terms of decreasing importance to overall product experience.
 
-![Content Best Practice](/resources/images/content-best-practice-4.png)
+![Content Best Practice]({{ '/resources/images/content-best-practice-4.png' | relative_url }})
 
 A partner for which all assessment components are merely “viable” should consult with Knewton before proceeding. Assessments that are not automatically scorable or that rely on rubrics to be scored should also be discussed with Knewton.
 

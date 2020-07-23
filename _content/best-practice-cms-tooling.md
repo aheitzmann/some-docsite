@@ -72,7 +72,7 @@ Regardless of differences between Containers and Atoms, Container IDs should be 
 
 ### Learning Objectives (Learning Objective ID)
 
-Individual assets should be tagged with Learning Objective information. Learning Objective IDs are typically applied to more than one Atom, indicating to Knewton that those Atoms teach or assess the same Learning Objective. Once a Content Inventory containing Learning Objective information is processed, Learning Objective IDs can also be used as [Goal Targets](/documentation/goals/).
+Individual assets should be tagged with Learning Objective information. Learning Objective IDs are typically applied to more than one Atom, indicating to Knewton that those Atoms teach or assess the same Learning Objective. Once a Content Inventory containing Learning Objective information is processed, Learning Objective IDs can also be used as [Goal Targets]({{ '/documentation/goals' | relative_url }}).
 
 Knewton will interpret any change to a Learning Objective ID as a potential deletion or addition of a new Learning Objective much in the same way as it does for Atom IDs.
 
