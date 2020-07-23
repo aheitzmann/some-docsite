@@ -14,7 +14,7 @@ The editorial process for developing educational content includes careful consid
 
 The two diagrams below present two ways of managing the same page of an e-book:
 
-[![Two different ways of managing the same ebook content]({{ '/resources/images/content-integrated-1.png' | relative_url }})]({{'/resources/images/content-integrated-1.png' | relative_url}})
+![Two different ways of managing the same ebook content]({{ '/resources/images/content-integrated-1.png' | relative_url }})
 
 The diagram on the left uses print conventions to structure the content. The typography gives some notion of sections, and of separation between instruction and assessment, but the smallest discrete unit here is a page in a textbook.
 
