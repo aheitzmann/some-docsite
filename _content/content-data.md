@@ -12,15 +12,15 @@ hero:
 
 Content data refers to various pieces of information about your integrated content. There are two major kinds of content data: **identifiers** and **properties**.
 
-[![Content Data](/resources/images/content-data-1.png)](/resources/images/content-data-1.png)**Identifiers** (IDs) are essentially unique fingerprints (often a combination of letters and numbers) that software needs in order to recognize a piece of content. A computer knows a piece of content only by its ID. If the ID for a piece of content changes, then the software will act as if this piece of content no longer exists, and the piece of content with a different ID is brand new.
+![Content Data]({{ '/resources/images/content-data-1.png' | relative_url }}) **Identifiers** (IDs) are essentially unique fingerprints (often a combination of letters and numbers) that software needs in order to recognize a piece of content. A computer knows a piece of content only by its ID. If the ID for a piece of content changes, then the software will act as if this piece of content no longer exists, and the piece of content with a different ID is brand new.
 
 Any other characteristics of the content — titles, descriptions, answers — are **properties**. Human beings use properties to describe, understand, edit, and distinguish between pieces of integrated content. Two questions with the same ID but different properties may look like two distinct pieces of content to human beings. However, a computer would view them as a single piece of content:
 
-[![Content Data](/resources/images/content-data-2.png)](/resources/images/content-data-2.png)
+![Content Data]({{ '/resources/images/content-data-2.png' | relative_url }})
 
 On the other hand, two pieces of content with identical properties but different IDs will appear distinct to computers. One common example of this principle in practice is when a content owner accidentally creates two assessments that are, for all intents and purposes, identical:
 
-[![Content Data](/resources/images/content-data-3.png)](/resources/images/content-data-3.png)
+![Content Data]({{ '/resources/images/content-data-3.png' | relative_url }})
 
 To the human eye, it’s obvious that these two questions are one and the same. However, a computer will treat these as two completely unique questions. Knewton might recommended the question on the left, then further test the student’s knowledge by recommending the question on the right — not realizing that the student has already answered it.
 
@@ -38,7 +38,7 @@ The table below lists the major types of content data for a Knewton integration.
 
 The diagram below illustrates how IDs are the crucial connection between your adaptive learning application and your content:
 
-[![Content Data](/resources/images/content-data-4.png)](/resources/images/content-data-4.png)
+![Content Data]({{ '/resources/images/content-data-4.png' | relative_url }})
 
 Whenever your application talks to Knewton about content—for example, to declare that a student has just answered an assessment question correctly—it will reference an ID (in this example, an Atom ID).
 

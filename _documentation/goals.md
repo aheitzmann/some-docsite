@@ -13,35 +13,37 @@ hero:
 
 *In this section:*
 
-* Managing Goals
-  * [Create a new goal](#create-a-new-goal)
-  * [Update an existing goal](#update-an-existing-goal)
-  * [Delete an existing goal](#delete-an-existing-goal)
-* Assigning a goal to a learner [See: Goals and Registrations](#goals-and-registrations)
+- [Managing Goals](#managing-goals)
+	- [Goal Management Endpoints](#goal-management-endpoints)
+		- [Create a new goal](#create-a-new-goal)
+			- [Example Request - Create a goal.](#example-request---create-a-goal)
+		- [Update an existing goal](#update-an-existing-goal)
+		- [Delete an existing goal](#delete-an-existing-goal)
+	- [Goal Request/Response JSON Keys](#goal-requestresponse-json-keys)
+	- [Goal Path Parameters](#goal-path-parameters)
+	- [Notes about Goals](#notes-about-goals)
+- [Goals and Registrations](#goals-and-registrations)
+	- [Goal and Registration Endpoints](#goal-and-registration-endpoints)
+		- [Assign a goal to a registration](#assign-a-goal-to-a-registration)
+			- [Example Request - Assign a goal to multiple registrations](#example-request---assign-a-goal-to-multiple-registrations)
+		- [Check if a registration as been assigned a goal](#check-if-a-registration-as-been-assigned-a-goal)
+		- [Un-Assign a goal from a registration](#un-assign-a-goal-from-a-registration)
+		- [Batch assign or unassign a goal to or from multiple registrations](#batch-assign-or-unassign-a-goal-to-or-from-multiple-registrations)
+	- [Goal and Registration Path Parameters](#goal-and-registration-path-parameters)
+	- [Goal and Registration Request/Response JSON Keys](#goal-and-registration-requestresponse-json-keys)
   
 <br>
 
-----
+---
+
+# Managing Goals
+
+## Goal Management Endpoints
 
 ### Create a new goal
 **POST** `/learning-instances/{li_id}/scoped-goals`
 
-
-### Update an existing goal
-**PUT** `/learning-instances/{li\_id}/scoped-goals/{goal\_id}`
-
-This will update an existing goal. This change will apply to all registrations which currently have the goal assigned as the time of the update.
-
-<div class="callout callout--info">
-    <p>Note: No partial updates, you must post the entire goal body</p>
-</div>
-
-### Delete an existing goal
-**DELETE** `/learning-instances/{li\_id}/scoped-goals/{goal\_id}`
-
-Delete an existing goal.
-
-### Example Request - Create a goal.
+#### Example Request - Create a goal.
 
 **Url:** `https://api.knewton.com/v0/learning-instances/d0effd52-c3a7-4a3c-827a-3ac5eaa049a1/scoped-goals`
 
@@ -103,7 +105,21 @@ Delete an existing goal.
 }
 ```
 
-### Request/Response JSON Keys
+### Update an existing goal
+**PUT** `/learning-instances/{li\_id}/scoped-goals/{goal\_id}`
+
+This will update an existing goal. This change will apply to all registrations which currently have the goal assigned as the time of the update.
+
+<div class="callout callout--info">
+    <p>Note: No partial updates, you must post the entire goal body</p>
+</div>
+
+### Delete an existing goal
+**DELETE** `/learning-instances/{li\_id}/scoped-goals/{goal\_id}`
+
+Delete an existing goal.
+
+## Goal Request/Response JSON Keys
 
 | Parameter | Type | Optional | Description |
 | --- | --- | --- | --- | --- | --- |
@@ -124,7 +140,7 @@ Delete an existing goal.
 | completion\_criteria.<br>min\_work\_per\_target | int | Yes | The minimum number of assessing interactions the student must have on a target's concepts to be eligible for target completion. |
 | completion\_criteria.<br>max\_work\_on\_goal | int | Yes | The maximum number of interactions (assessing and instructing) the student can have toward a goal (including on-target and off-target work), after which they'll achieve status "complete_max_work" on the goal, regardless of mastery. They will still receive recommendations, and if they complete via mastery, the status will become "complete". |
 
-### Path Parameters
+## Goal Path Parameters
 
 | Parameter | Type | Optional | Immutable | Description |
 | --- | --- | --- | --- | --- |
@@ -142,66 +158,23 @@ Knewton goals can exist in one of several states, each of which directly impacts
 *   **In Progress** – The learner registration is working on the goal and is still receiving recommendations to help her achieve the target score defined in the goal.
 *   **Ready** – The learner registration has achieved the target score defined in the goal.
 
-# Goals and Registrations
-
-----
 <br>
 
-## **PUT** <br> /learning-instances/{li\_id}/scoped-goals/{goal\_id}/registrations/{reg\_id}
-Assign a goal to a registration
+# Goals and Registrations
+A single goal can be assigned to many registrations
 
-## **GET** <br> /learning-instances/{li\_id}/scoped-goals/{goal\_id}/registrations/{reg\_id}
-Check if the registration has been assigned to this goal. If an HTTP 404 Not Found is returned, then it has not been assigned, otherwise it has been.
+## Goal and Registration Endpoints
 
-## **DELETE** <br> /learning-instances/{li\_id}/scoped-goals/{goal\_id}/registrations/{reg\_id}
-Remove the assigning of a goal from a registration
+### Assign a goal to a registration
+**PUT** `/learning-instances/{li\_id}/scoped-goals/{goal\_id}/registrations/{reg\_id}`
 
-### Path Parameters
+#### Example Request - Assign a goal to multiple registrations
 
-| Parameter | Type | Optional | Immutable | Description |
-| --- | --- | --- | --- | --- |
-| li\_id | UUID | No | No | ID of the learning instance that owns the goal |
-| goal\_id | UUID | No | Yes | The ID of the goal to prepare for recommendations |
-| reg\_id | UUID | No | Yes | ID of a registration to prepare for recommendations |
-
-<div class="callout callout--info">
-    <p>Note: Current Account must be an instructor for this learning instance or have Partner Administrator privileges</p>
-</div>
-
-## **PUT** <br> /learning-instances/{li\_id}/scoped-goals/{goal\_id}/registrations
-Assign (or unassign) a goal to (or from) multiple registrations in a single call
-
-### Request/Response JSON Keys
-
-| Parameter | Type | Optional | Description |
-| --- | --- | --- | --- | --- | --- |
-| action | String | No | Must be either "assign" or "unassign" | 
-| registration\_type | String | Yes | Type of batch call - can be either "all" (action taken against all registrations) or "learners" (action taken against only learner registrations) or "instructors" (action taken only against instructor registrations). Only one of registration_type or registration_ids can be specified. |
-| registration\_ids | Array of UUIDs | Yes | List of registration ids to assign to or unassign from a particular goal in a learning instance. Only one of registration_type or registration_ids can be specified. |
-| success.code | Integer | Yes  | Part of a partial response, the HTTP status code for this part |
-| success.body | Object | Yes  | Part of a partial response, contains the successfully updated registration ids |
-| success.body.registration\_ids | Array of UUIDs | Yes | The IDs for the registrations successfully updated |
-| failure\[x\].code | Integer | Yes | Part of a partial response, the HTTP status for this part of the errors |
-| failure\[x\].message | String | Yes | Part of a partial response, a string description of the error that occurred |
-| failure\[x\].error\_id | UUID | Yes | Part of a partial response, a unique error ID for this failure |
-| failure\[x\].body | Object | Yes | Part of a partial response, contains the unsuccessfully updated registration IDs |
-| failure\[x\].body.registration\_ids | Array of UUIDs | Yes | The IDs for the registrations not successfully updated |
-
-### Path Parameters
-
-| Parameter | Type | Optional | Immutable | Description |
-| --- | --- | --- | --- | --- |
-| li\_id | UUID | No | Yes | ID of the learning instance that owns the goal | 
-| goal\_id | UUID | No | Yes | The ID of the goal to prepare or stop preparing for recommendations | 
-
-### Samples
-
-**URL:**
-`https://api.knewton.com/v0/learning-instances/0cb6f3dc-8c6d-4bc7-b278-08d6147d9a0c/scoped-goals/f6d8c4f2-4956-4ff6-aa8b-995b6c77d68f/registrations/`
+**Url:** `https://api.knewton.com/v0/learning-instances/0cb6f3dc-8c6d-4bc7-b278-08d6147d9a0c/scoped-goals/f6d8c4f2-4956-4ff6-aa8b-995b6c77d68f/registrations/`
 
 **Verb:** `PUT`
 
-**Request Body**
+**Request Body:**
 
 ```json
 {
@@ -210,7 +183,7 @@ Assign (or unassign) a goal to (or from) multiple registrations in a single call
 }
 ```
 
-**Response Body**
+**Assign Goal to Registrations - Response Body:**
 
 ```json
 {
@@ -228,3 +201,46 @@ Assign (or unassign) a goal to (or from) multiple registrations in a single call
 <div class="callout callout--info">
     <p>Note: Current Account must be an instructor for this learning instance or have Partner Administrator privileges</p>
 </div>
+
+### Check if a registration as been assigned a goal
+**GET** `/learning-instances/{li\_id}/scoped-goals/{goal\_id}/registrations/{reg\_id}`
+
+Check if the registration has been assigned to this goal. If an HTTP 404 Not Found is returned, then it has not been assigned, otherwise it has been.
+
+### Un-Assign a goal from a registration
+**DELETE** `/learning-instances/{li\_id}/scoped-goals/{goal\_id}/registrations/{reg\_id}`
+
+Remove the assigning of a goal from a registration
+
+### Batch assign or unassign a goal to or from multiple registrations
+**PUT** `/learning-instances/{li\_id}/scoped-goals/{goal\_id}/registrations`
+
+Assign (or unassign) a goal to (or from) multiple registrations in a single call
+
+## Goal and Registration Path Parameters
+
+| Parameter | Type | Optional | Immutable | Description |
+| --- | --- | --- | --- | --- |
+| li\_id | UUID | No | No | ID of the learning instance that owns the goal |
+| goal\_id | UUID | No | Yes | The ID of the goal to prepare for recommendations |
+| reg\_id | UUID | No | Yes | ID of a registration to prepare for recommendations |
+
+<div class="callout callout--info">
+    <p>Note: Current Account must be an instructor for this learning instance or have Partner Administrator privileges</p>
+</div>
+
+## Goal and Registration Request/Response JSON Keys
+
+| Parameter | Type | Optional | Description |
+| --- | --- | --- | --- | --- | --- |
+| action | String | No | Must be either "assign" or "unassign" | 
+| registration\_type | String | Yes | Type of batch call - can be either "all" (action taken against all registrations) or "learners" (action taken against only learner registrations) or "instructors" (action taken only against instructor registrations). Only one of registration_type or registration_ids can be specified. |
+| registration\_ids | Array of UUIDs | Yes | List of registration ids to assign to or unassign from a particular goal in a learning instance. Only one of registration_type or registration_ids can be specified. |
+| success.code | Integer | Yes  | Part of a partial response, the HTTP status code for this part |
+| success.body | Object | Yes  | Part of a partial response, contains the successfully updated registration ids |
+| success.body.registration\_ids | Array of UUIDs | Yes | The IDs for the registrations successfully updated |
+| failure\[x\].code | Integer | Yes | Part of a partial response, the HTTP status for this part of the errors |
+| failure\[x\].message | String | Yes | Part of a partial response, a string description of the error that occurred |
+| failure\[x\].error\_id | UUID | Yes | Part of a partial response, a unique error ID for this failure |
+| failure\[x\].body | Object | Yes | Part of a partial response, contains the unsuccessfully updated registration IDs |
+| failure\[x\].body.registration\_ids | Array of UUIDs | Yes | The IDs for the registrations not successfully updated |

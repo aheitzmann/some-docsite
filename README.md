@@ -34,6 +34,7 @@
 - [Editing Content](#editing-content)
   - [Relative Urls for Images and Links](#relative-urls-for-images-and-links)
     - [Relative URL for an Image](#relative-url-for-an-image)
+    - [Relative URL for a Link](#relative-url-for-a-link)
   - [Adding images for pages](#adding-images-for-pages)
   - [Editing existing content](#editing-existing-content)
   - [Adding new content](#adding-new-content)
@@ -155,6 +156,12 @@ To ensure links are always relative to the location, you must specify the relati
 
 Note the `relative_url` syntax
 
+### Relative URL for a Link
+
+`[Goal Targets]({{ '/documentation/goals' | relative_url }})`
+
+Note the `relative_url` syntax
+
 ## Adding images for pages
 Images that relate to the content are contained in `/resources/images` please ensure you appropriately name your image files. e.g: `content-inventory-1.png` or `documentation-workflow-1.png`
 
@@ -162,7 +169,6 @@ Images that relate to the content are contained in `/resources/images` please en
 You can quickly edit existing content by using the github ui and committing changes back. These changes will be automatically collected by github and the content re-generated in almost real time.
 
 ![Edit Existing Content](./resources/readme/editing-content-github.gif)
-
 
 ## Adding new content
 
