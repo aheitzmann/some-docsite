@@ -33,7 +33,7 @@ The system architecture is visualized below. Some resources — namely those enc
 
 The sequence of key API touchpoints in a typical learning application is shown below. This diagram appears throughout these developer resources to highlight a specific set of interactions and situate the application developer in the higher-level flow.
 
-![Api Workflow](/resources/images/documentation-api-workflow-1.png )
+![Api Workflow]({{ '/resources/images/documentation-api-workflow-1.png' | relative_url }})
 
 Some steps in the diagram are “hard” prerequisites for subsequent interactions. For example, user accounts must be registered in learning instances before goals can be assigned to them. Other interactions are more indirect. For instance, sending events on the learner’s behalf doesn’t necessarily lead to synchronously updated recommendations for that learner. Instead, the recommendations are generated asynchronously after some delay.
 
