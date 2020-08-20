@@ -118,7 +118,6 @@
         }
         .pane#pane-learner.active {
           &:after {
-            background: transparent url(/knewton-theme/assets/images/slider/arrow-learner.jpg) 0 0 no-repeat;
           }
         }
         .pane#pane-partner-applications {
@@ -137,7 +136,6 @@
             content: "";
             width: 14px;
             height: 22px;
-            background: transparent url(/knewton-theme/assets/images/slider/arrow-partner-applications.jpg) 0 0 no-repeat;
             top: 25px;
             right: -14px;
             z-index: 100;
@@ -165,7 +163,6 @@
             content: "";
             width: 14px;
             height: 22px;
-            background: transparent url(/knewton-theme/assets/images/slider/arrow-knewton-api.jpg) 0 0 no-repeat;
             top: 25px;
             right: -14px;
             z-index: 100;
