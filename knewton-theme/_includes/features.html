@@ -57,13 +57,13 @@
 		
 								<div class="pane" id="pane-partner-applications">
 									<h4>Partner Applications</h4>
-									<img src="/knewton-theme/assets/images/slider/computers.png">
+									<img src="{{ '/knewton-theme/assets/images/slider/computers.png' | relative_url }}">
 								</div>
 		
 								<div class="pane" id="pane-knewton-api">
 									<h4>Knewton API</h4>
-									<img id="arrows" src="/knewton-theme/assets/images/slider/arrows.png">
-									<img id="waves" src="/knewton-theme/assets/images/slider/waves.png">
+									<img id="arrows" src="{{ '/knewton-theme/assets/images/slider/arrows.png' | relative_url }}">
+									<img id="waves" src="{{ '/knewton-theme/assets/images/slider/waves.png' | relative_url }}">
 		
 								</div>
 		
@@ -78,7 +78,7 @@
 							</div>
 		
 							<div id="how-knewton-works-slider-captions">
-								<a href="javascript:void(0);" title="Previous" alt="Previous" id="prev-pane" class="pane-nav"><img src="/knewton-theme/assets/images/slider/arrow-left.png"></a>
+								<a href="javascript:void(0);" title="Previous" alt="Previous" id="prev-pane" class="pane-nav"><img src="{{ '/knewton-theme/assets/images/slider/arrow-left.png' | relative_url }}"></a>
 								<div id="captions">
 									{% for caption in page.features.slider.captions %}
 										<div id="{{ caption.id ]}}" class="caption">
@@ -87,7 +87,7 @@
 										</div> 
 									{% endfor %}
 								</div>
-								<a href="javascript:void(0);" title="Next" alt="Next" id="next-pane" class="pane-nav"><img src="/knewton-theme/assets/images/slider/arrow-right.png"></a>
+								<a href="javascript:void(0);" title="Next" alt="Next" id="next-pane" class="pane-nav"><img src="{{ '/knewton-theme/assets/images/slider/arrow-right.png' | relative_url }}"></a>
 							</div>
 						</div>
 					</div>
